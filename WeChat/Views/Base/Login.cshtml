@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "POEMS";
+}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache,no-store">
+    <title>POEMS</title>
+    <script src="~/Content/Public/javascript/jquery-1.11.1.js"></script>
+    <script src="~/Content/Public/E2EE/base64_jso.js"></script>
+    <script src="~/Content/Public/E2EE/hashprc_jso.js"></script>
+    <script src="~/Content/Public/E2EE/jsbn_jso.js"></script>
+    <script src="~/Content/Public/E2EE/prng4_jso.js"></script>
+    <script src="~/Content/Public/E2EE/rng_jso.js"></script>
+    <script src="~/Content/Public/E2EE/rsa_jso.js"></script>
+    <script src="~/Content/Public/javascript/LoginAll.js?121111"></script>
+    <script src="~/Content/Public/E2EE/md5.js"></script>
+    <link href="~/Content/Public/css/LoginAll.css?121111" rel="stylesheet" />
+    <link href="~/Content/Public/css/dialog.css?121111" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="Login-Top">
+        <img src="~/Content/Public/img/logo.png" />
+    </div>
+    <div class="Login-Bottom">
+        <div class="account">
+            <img src="~/Content/Public/img/account.png" />
+            <input type="text" placeholder="Account" autofocus="autofocus" id="vAccount" value="" autocomplete="off">
+        </div>
+        <div class="passwd">
+            <img src="~/Content/Public/img/passwd.png" />
+            <input type="password" placeholder="Password" id="vPassword" value="" autocomplete="off">
+        </div>
+        <button id="Login">Login</button><br /><br />
+        <div>
+            <a id="forgotpss" href="~/Content/Public/img/pwdform.pdf" style="color: black;">Forgot Password?</a>
+        </div>
+    </div>
+    <div id="Login-2FA-Verification" style="display: none;">
+        <div class="weui_dialog" style="z-index:11">
+            <div class="weui_dialog_hd">
+                <div id="SMS" class="showcolor">SMS</div>
+                <div id="Token">Token</div>
+            </div>
+            <div class="weui_dialog_bd">
+                <span style="padding: 0px 0px 0px 18px;">OTP-Token</span>
+                <input id="input_text" type="text" />
+                <button id="OTP">Get&nbsp;OTP</button>
+            </div>
+            <div class="weui_dialog_bd">
+                <button class="Login_Verification_submit">Submit</button>
+                <br />
+                <button class="Exit">Exit>></button>
+            </div>
+        </div>
+    </div>
+    <div id="LanguageSwitch">
+        <div class="LanguageSwitch-left">
+            语言设置:
+        </div>
+        <div class="LanguageSwitch-right">
+            <label><input name="radio" type="radio" value="" checked="checked" />中文 </label>
+            <label><input name="radio" type="radio" value="" />English </label>
+            </div>
+        </div>
+    <div style="
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    color: brown;
+    font-size: 12px;
+    ">@ViewData["liveOrUat"]</div>
+    <div id="Login-dialog" style="display: none;">
+        <div class="dialog-content">
+            <div class="dialog_hd"></div>
+            <div class="dialog_bd"></div>
+            <div class="dialog_bm">
+                <a href="javascript:;">OK</a>
+            </div>
+        </div>
+    </div>
+    <div id="loading" style="display:block;background:#fff;">
+        <div class="loading-content">
+            <!-- :) -->
+            <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+            <p class="loading-content-p"></p>
+        </div>
+
+    </div>
+    <div id="statement">
+        <p style="word-break: break-word;">
+            本交易系统仅供辉立商品（新加坡）有限公司/辉立企业有限公司，欢迎使用本客户产品交易平台，请选择是否同意。
+        </p>
+        <p>
+            <button class="Agree">Agree</button>
+            <button class="Disagree">Disagree</button>
+        </p>
+        <p style="word-break: break-word;">
+            以上为新加坡注册公司，受新加坡地区法律约束。辉立商品（新加坡）有限公司-受新加坡证监会监管（SH no.111111）
+        </p>
+        <p>
+            <a href="~/Content/PSPL_TC.pdf">条件条款</a>
+            <a href="~/Content/advisorynotes.pdf">安全须知</a>
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1673 @@
+﻿@{
+    ViewBag.Title = "POEMS";
+}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache,no-store">
+    <title>POEMS</title>
+    <script src="~/Content/Public/E2EE/base64_jso.js"></script>
+    <script src="~/Content/Public/E2EE/md5.js"></script>
+    <script src="~/Content/Public/E2EE/hashprc_jso.js"></script>
+    <script src="~/Content/Public/E2EE/jsbn_jso.js"></script>
+    <script src="~/Content/Public/E2EE/prng4_jso.js"></script>
+    <script src="~/Content/Public/E2EE/rng_jso.js"></script>
+    <script src="~/Content/Public/E2EE/rsa_jso.js"></script>
+    <script src="~/Content/Public/javascript/framework7.min.js"></script>
+    <script src="~/Content/Public/javascript/jquery-1.11.1.js"></script>
+    <script src="~/Content/Public/javascript/pmp.latest.min.v3.0.0.4.js?62312"></script>
+    <script src="~/Content/Public/javascript/echarts.min.js"></script>
+    <script type="text/javascript" src="~/Content/Chinese/ViewJs/wechat-app.js?01231201" charset="gbk"></script>
+    <script src="~/Content/Public/javascript/quotation-data.js?122210"></script>
+
+    <link href="~/Content/Public/css/framework7.min.css" rel="stylesheet" />
+    <link href="~/Content/Public/css/dialog.css?0123110" rel="stylesheet" />
+    <link href="~/Content/Chinese/CSS/Index.css?01115" rel="stylesheet" />
+    <link href="~/Content/Chinese/CSS/TradeForm.css?01115" rel="stylesheet" />
+
+</head>
+<body>
+    <!-- Status bar overlay for full screen mode -->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay close-panel"></div>
+    <!-- Left panel with reveal effect-->
+
+    <div id="menus-black-div" class="panel panel-left panel-reveal close-panel">
+        <div class="menus-title-img"><img src="~/Content/Public/img/logo.png" alt="" /></div>
+        <div class=" list-block">
+            <ul>
+                <li class="item-content" id="Watchlist">
+                    <div class="item-media"><a href="#tabWatchlist" class="tab-mainFrame tab-link active close-panel icon-Watchlist"></a></div>
+                    <a href="#tabWatchlist" class="tab-mainFrame tab-link active close-panel">观察列表</a>
+                </li>
+                <li class="item-content" id="Trades">
+                    <div class="item-media"><a href="#tabTrade" class="tab-mainFrame tab-link active close-panel icon-Trade"></a></div>
+                    <a href="#tabTrade" class="tab-mainFrame tab-link active close-panel">交易</a>
+                </li>
+                <li class="item-content" id="OrderStatus">
+                    <div class="item-media"><a href="#tabOrdStats" class="tab-mainFrame tab-link active close-panel icon-OrderStatus"></a></div>
+                    <a href="#tabOrdStats" class="tab-mainFrame tab-link active close-panel">订单状态</a>
+                </li>
+                <li class="item-content" id="Portfolio">
+                    <div class="item-media"><a href="#tabPortfolio" class="tab-mainFrame tab-link active close-panel icon-Portfolio"></a></div>
+                    <a href="#tabPortfolio" class="tab-mainFrame tab-link active close-panel">投资组合</a>
+                </li>
+                <li class="item-content" id="Position">
+                    <div class="item-media"><a href="#tabPosition" class="tab-mainFrame tab-link active close-panel icon-OutsPositions"></a></div>
+                    <a href="#tabPosition" class="tab-mainFrame tab-link active close-panel">未付款项</a>
+                </li>
+                @*<li class="item-content" id="TransHistory">
+                    <div class="item-media"><a href="#tabTransHis" class="tab-mainFrame tab-link active close-panel icon-TransHistory"></a></div>
+                    <a href="#tabTransHis" class="tab-mainFrame tab-link active close-panel">Transaction History</a>
+                </li>
+                <li class="item-content" id="Setting">
+                    <div class="item-media"><a href="#tabSetting" class="tab-mainFrame tab-link active close-panel icon-Setting"></a></div>
+                    <a href="#tabSetting" class="tab-mainFrame tab-link active close-panel">Setting</a>
+                </li>*@
+                <li class="item-content" id="Logout">
+                    <div class="item-media"><a class="icon-Logout"></a></div>
+                    <a class="tab-mainFrame tab-link active close-panel">退出</a>
+                </li>
+            </ul>
+        </div>
+        <div id="LanguageSwitch">
+            <div class="LanguageSwitch-left">
+                语言设置:
+            </div>
+            <div class="LanguageSwitch-right">
+                <label><input name="radio" type="radio" value="" checked="checked" />中文 </label>
+                <label><input name="radio" type="radio" value="" />English </label>
+            </div>
+        </div>
+    </div>
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-right panel-cover">
+        <div class="content-block">
+            <p>Right panel content goes here</p>
+        </div>
+    </div>
+
+    <!-- Tabs, now tabs wrapper is "views" -->
+    <div class="views tabs">
+        <!-- Tab 1 - View 1, active by default -->
+        <div id="tabWatchlist" class="view tab view-watchlist">
+            <div class="navbar colorHieght zIndex" style="position: fixed;">
+                <div class="navbar-inner">
+                    <div class="left">
+                        <a href="#" data-panel="left" class="link open-panel Menus-Black icon-only" id="">
+                            <i class="icon icon-bars"></i>
+                        </a>
+                    </div>
+                    <div class="Watchlist-title">
+                        <div id="Watchlist-title-Text">
+                            观察列表
+                            <span></span>
+                        </div>
+                        <div id="Watchlist-drop-down" style="display:none;">
+                            <ul>
+                                <li>观察列表</li>
+                            </ul>
+                        </div>
+                    </div>
+                    @*<div id="Subrefresh"></div>*@
+                    <div class="right" id="Edit">
+                        编辑
+                    </div>
+                </div>
+            </div>
+            <div id="Watchlist-content">
+                <div class="ContractSearch">
+                    <input type="text" name="name" value="" id="AddWatchlist" placeholder="+添加投资产品至观察列表" autocomplete="off" />
+                    <div id="Watchlist-search-list">
+                        @*  *@
+                    </div>
+                    <select autocomplete="off">
+                        <option value="127">All</option>
+                        <option value="1">EQ</option>
+@Html.Raw(ViewData["optCFD"])
+@*<option value="2">CFD</option>
+    <option value="4">CFDDMA</option>*@
+<option value="8">FUT</option>
+<option value="16">REGFX</option>
+<option value="32">MiniFX</option>
+@Html.Raw(ViewData["optUT"])
+@*<option value="64">UT</option>*@
+                   </select>
+                    <span class="clear">×</span>
+                </div>
+                <div class="Contract-information-name">
+                    <div class="information-name-left">
+                        <ul id="Watchlist-contract-name">
+                            @*  Watchlist-contract-name 的高度按实际数据添加的*@
+                        </ul>
+                    </div>
+                    <div class="information-name-top">
+                        <div class="information-name-top_div">
+                            <ul class="top_div-name">
+                                <li>名称</li>
+                                <li>买价</li>
+                                <li>卖价</li>
+                                <li>最新成交价</li>
+                                <li>涨跌</li>
+                                <li>买量(k)</li>
+                                <li>卖量(k)</li>
+                                <li>成交量(k)</li>
+                                <li>开盘价</li>
+                                <li>最高价</li>
+                                <li>最低价</li>
+                                <li>昨日收盘价</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="information-name-content">
+                        <div id="information-name-content_div">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="Watchlist-Edit-details">
+                <div class="OrderStatus-Detail-top">
+                    <div class="navbar colorHieght clear-shadow">
+                        <div class="navbar-inner">
+                            <div class="left left-exit">
+                                <a href="#" class="link  icon-only Watchlist-Edit-exit">
+                                    <i class="icon icon-exit"></i>
+                                </a>
+                            </div>
+                            <div class="Detail-top-title" id="Edit-details-title">
+                                操作
+                            </div>
+                            <div class="right" id="Complete">
+                                完成
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="OrderStatus-Detail-content">
+                    <ul>
+                        @*  *@
+                    </ul>
+                </div>
+                <div class="OrderStatus-Detail-bottom">
+                    <button class="remove" value="1">删除</button>
+                    @*<button class="move" value="0">Move</button>*@
+                </div>
+            </div>
+        </div>
+
+        <div id="tabTrade" class="view tab view-trade">
+            <div class="navbar colorHieght" style="position: fixed;">
+                <div class="navbar-inner">
+                    <div class="left">
+                        <a href="#" data-panel="left" class="link open-panel Menus-Black icon-only" id="">
+                            <i class="icon icon-bars"></i>
+                        </a>
+                    </div>
+                    <div class="Trade-title">
+                        交易
+                    </div>
+                </div>
+            </div>
+            <div id="Trade-content">
+                <div class="ContractSearch">
+                    <input type="text" name="name" value="" id="Trade-Search" placeholder="通过代码或名称搜索" autocomplete="off" />
+                    <select autocomplete="off">
+                        <option value="127">All</option>
+                        <option value="1">EQ</option>
+@Html.Raw(ViewData["optCFD"])
+@*<option value="2">CFD</option>
+    <option value="4">CFDDMA</option>*@
+<option value="8">FUT</option>
+<option value="16">REGFX</option>
+<option value="32">MiniFX</option>
+@Html.Raw(ViewData["optUT"])
+@*<option value="64">UT</option>*@
+                    </select>
+                    <span class="clear">×</span>
+                </div>
+
+                <div class="Trade-ContractSearch" id="history-Trade-ContractSearch">
+                    <div class="Contract-title">
+                        历史搜索
+                    </div>
+                    <div class="Trade-search-list" id="history-search-list">
+                        <ul>
+                            @*  *@
+                        </ul>
+                    </div>
+                </div>
+                <div class="Trade-ContractSearch" id="Trade-ContractSearch">
+                    <div class="Trade-search-list" id="Trade-search-list">
+                        <ul>
+                            @*  *@
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div id="tabOrdStats" class="view tab view-ordstats">
+            <div class="navbar colorHieght">
+                <div class="navbar-inner">
+                    <div class="left">
+                        <a href="#" data-panel="left" class="link open-panel Menus-Black icon-only" id="">
+                            <i class="icon icon-bars"></i>
+                        </a>
+                    </div>
+                    <div class="Trade-title">
+                        交易进展
+                    </div>
+                </div>
+            </div>
+            <div class="pages tabs navbar-fixed toolbar-fixed">
+                <div data-page="page-3-1" class="page with-subnavbar tab no-swipeback" id="page-3-1">
+                        <div class="Order-content">
+                            <div class="Order-content-top">
+                                <a href="#TodayOrder" class="tab-link active">今天订单</a>
+                                <a href="#OrderHistory" class="tab-link">历史订单</a>
+                            </div>
+                            <div class="tabs-animated-wrap">
+                                <div class="tabs" style="transform: translate3d(0%, 0px, 0px);">
+                                    <div id="TodayOrder" class="tab active">
+                                        <div class="pages">
+                                            <div class="page">
+                                                <div class="Contract-information-name OrderStatus-content">
+                                                    <div class="information-name-left OrderStatus-left">
+                                                        <ul id="TodayOrder-contract-name">
+                                                            @* #TodayOrder-contract-name 的高度按实际数据添加的*@
+                                                    </ul>
+                                                </div>
+                                                <div class="information-name-top OrderStatus-top">
+                                                    <div class="information-name-top_div">
+                                                        <ul class="top_div-name">
+                                                            <li>名称</li>
+                                                            <li class="Status">状态</li>
+                                                            <li class="submitted">提交</li>
+                                                            <li class="executed">执行</li>
+                                                            <li class="orderType">订单类型</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="information-name-content OrderStatus-content-content">
+                                                    <div id="TodayOrder-content-details">
+                                                        @* #TodayOrder-content-details *@
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="OrderHistory" class="tab">
+                                <div class="pages">
+                                    <div class="page">
+                                        <div class="Contract-information-name OrderStatus-content">
+                                            <div class="OrderStatus-Historicaldate" autocomplete="off">
+                                                <select id="OrderHistory-select">
+                                                    @*<option value="value">text</option>*@
+                                                </select>
+                                            </div>
+                                            <div class="information-name-left OrderHistory-left">
+                                                <ul id="OrderHistory-contract-name">
+                                                    @* #OrderHistory-contract-name 的高度按实际数据添加的*@
+                                                </ul>
+                                            </div>
+                                            <div class="information-name-top OrderStatus-top">
+                                                <div class="information-name-top_div">
+                                                    <ul class="top_div-name">
+                                                        <li>名称</li>
+                                                        <li class="Status">状态</li>
+                                                        <li class="submitted">提交</li>
+                                                        <li class="executed">执行</li>
+                                                        <li class="orderType">订单类型</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="information-name-content OrderHistory-content-content">
+                                                <div id="OrderHistory-content-details">
+                                                    @* #OrderHistory-content-details *@
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+            <div class="Modular-Detail" style="display:none;">
+                <div class="OrderStatus-Detail-top">
+                    <div class="navbar colorHieght clear-shadow">
+                        <div class="navbar-inner">
+                            <div class="left left-exit">
+                                <a href="#" class="link  icon-only Modular-Detail-exit">
+                                    <i class="icon icon-exit"></i>
+                                </a>
+                            </div>
+                            <div class="Detail-top-title" id="OrderStatus-Detail-title">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colorHieght clear-shadow">
+                        <div class="Detailtitle-bottom-left">
+                            @* 后续加动态 *@
+                        </div>
+                        <div class="Detailtitle-bottom-right" id="OrderDetail-title-bottom">
+
+                        </div>
+
+                    </div>
+                    <div class="Detailtitle-top-last">
+                        订单状态详情
+                    </div>
+                </div>
+                <div class="OrderStatus-Detail-content" id="OrderStatus-Detail-content">
+                    <div class="Detail-content-top">
+                        @**@
+                    </div>
+                    <div class="Detail-content-bottom">
+                        <div class="Detail-bottom-title-name">历史订单记录</div>
+                        <div class="Detail-bottom-title">
+                            <ul>
+                                <li>状态</li>
+                                <li>数量&nbsp;/&nbsp;价格</li>
+                                <li>日期/时间</li>
+                            </ul>
+                        </div>
+                        <div class="Detail-bottom-title-content">
+                            @**@
+                        </div>
+                    </div>
+                </div>
+                <div class="OrderStatus-Detail-bottom">
+                    <button id="Withdraw">撤销</button>
+                    <button id="Amend">修改</button>
+                </div>
+            </div>
+            <div id="Withdraw-div">
+                <div>
+                    @**@
+                </div>
+            </div>
+            <div id="Amend-div">
+                <div>
+                    @**@
+                </div>
+            </div>
+        </div>
+
+        <div id="tabPortfolio" class="view tab view-portfolio">
+            <div class="navbar Portfolio">
+                <div class="navbar-inner">
+                    <div class="left">
+                        <a href="#" data-panel="left" class="link open-panel Menus-Black icon-only" id="">
+                            <i class="icon icon-bars"></i>
+                        </a>
+                    </div>
+                    <div class="Portfolio-top-title" id="Portfolio-top-title">
+
+                    </div>
+                </div>
+            </div>
+            <div class="Portfolio-content">
+                <div class="Portfolio-content-top">
+                    <p>资产净值</p>
+                    <div class="canvas-div">
+                        <canvas id="canvas"></canvas>
+                    </div>
+                    <div class="product-div">
+                        @*  *@
+                    </div>
+                </div>
+                <div class="Portfolio-content-bottom">
+                    <div class="Portfolio-content-bottom-top">
+                        <p><span>账户</span><span>资产净值</span></p>
+                    </div>
+                    <div class="Portfolio-content-bottom-content">
+                        @**@
+                    </div>
+                    <div class="Portfolio-content-bottom-tt">
+                        <p>@*<span>Total</span><span>content</span>*@</p>
+                        <p><a href="#" id="Disclaimer">免责声明</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="show-Disclaimer" id="show-Disclaimer">@*id="hide-Disclaimer"*@
+                <div class="Disclaimer-content">
+                </div>
+                <div class="Disclaimer-bottom" id="hide-Disclaimer">
+                    我同意
+                </div>
+            </div>
+            <div id="Portfolio-Detail" style="display:none;">
+                    <div class="navbar Portfolio colorHieght">
+                        <div class="navbar-inner">
+                            <div class="left">
+                                <a href="#" data-panel="left" id="">
+                                    <i class="icon icon-exit" id="hide-Portfolio-Detail"></i>
+                                </a>
+                            </div>
+                            <div class="Portfolio-title">
+                                <div id="Portfolio-title-Text">
+                                    <a href="#">content</a>
+                                    <div>投资组合</div>
+                                    <span></span>
+                                </div>
+                                <div id="Portfolio-drop-down" style="display:none;">
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Portfolio-Detail-content-top">
+                        <a href="#AccountNo-Detail" class="tab-link active">账户细节</a>
+                        <a href="#Position-s" class="tab-link">持股</a>
+                    </div>
+                    <div class="tabs-animated-wrap">
+                        <div class="tabs" style="transform: translate3d(0%, 0px, 0px);">
+                            <div id="AccountNo-Detail" class="tab active">
+                                <div class="pages">
+                                    <div class="page">
+                                        <div class="PortfolioDetail-title-top">
+                                            <div class="PortfolioDetail-top" id="PortfolioDetail-top">
+                                                <ul>
+                                                    <li>描述</li>
+                                                    <li>SGDBase</li>
+                                                    <li>SGD</li>
+                                                </ul>
+                                            </div>
+                                            <div class="PortfolioDetail-content-content" >
+                                                <div id ="AccountNo-Detail-content-details">
+
+                                                </div>
+                                            </div>
+                                            <div class="Portfolio-content-bottom-tt AccountNo-Detail" id="AccountNo-Detail-bottom">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="Position-s" class="tab">
+                                <div class="pages">
+                                    <div class="page">
+                                        <div class="Contract-information-name PortfolioDetail-content">
+                                            <div class="PortfolioDetail-Historicaldate">
+
+                                            </div>
+                                            <div class="information-name-left PositionS-left">
+                                                <ul id="PositionS-contract-name">
+                                                    @* #OrderHistory-contract-name 的高度按实际数据添加的*@
+                                                </ul>
+                                            </div>
+                                            <div class="information-name-top PortfolioDetail-top">
+                                                <div class="information-name-top_div">
+                                                    <ul class="top_div-name">
+                                                        <li>名称</li>
+                                                        <li>潜在损失</li>
+                                                        <li>数量</li>
+                                                        <li>市值</li>
+                                                        <li>平均成本价</li>
+                                                        <li>闭市价格</li>
+                                                        <li>交易货币</li>
+                                                        <li>暂停数量</li>
+                                                        <li>总成本</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="information-name-content PositionS-content-content">
+                                                <div id="PositionS-content-details">
+                                                    @* #OrderHistory-content-details *@
+                                                </div>
+                                            </div>
+                                            <div class="Portfolio-content-bottom-tt PositionS" id="PositionS-bottom">
+                                                @*<p><span>Total</span><span>content</span></p>
+                                                <p>Disclaimer</p>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div id="tabPosition" class="view tab view-position ">
+            <div class="navbar colorHieght">
+                <div class="navbar-inner">
+                    <div class="left">
+                        <a href="#" data-panel="left" class="link open-panel Menus-Black icon-only" id="">
+                            <i class="icon icon-bars"></i>
+                        </a>
+                    </div>
+                    <div class="Position-top-title" id="Position-top-title">
+                        @* title name *@
+                    </div>
+                </div>
+            </div>
+            <div class="pages tabs navbar-fixed toolbar-fixed">
+                <div class="Position-content">
+                    <div class="Position-top">
+                        <ul>
+                            <li>名称</li>
+                            <li>未支付金额</li>
+                        </ul>
+                    </div>
+                    <div class="Position-content-content">
+                        @*<div class="Position-content-select">
+                            <div class="Position-content-select-top">
+                                 select text and  
+                            </div>
+                            <div class="Position-content-select-bottom">
+                                 content 
+                            </div>
+                        </div>
+                        <div class="Position-select-box"></div>*@
+                    </div>
+                    <div class="Position-bottom" id="Position-bottom">
+                    </div>
+                </div>
+            </div>
+            <div class="Modular-Detail" style="display:none;">
+                <div class="OrderStatus-Detail-top">
+                    <div class="navbar colorHieght clear-shadow OutstandingPositions-top">
+                        <div class="navbar-inner">
+                            <div class="left left-exit">
+                                <a href="#" class="link  icon-only Modular-Detail-exit">
+                                    <i class="icon icon-exit"></i>
+                                </a>
+                            </div>
+                            <div class="Position-top-title" id="OutstandingPositions-top-title">
+                                @* title name 
+                                <ul>
+                                    <li>
+                                        <a href="#">content</a>
+                                        <div></div>
+                                    </li>
+                                </ul>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colorHieght clear-shadow">
+                        <div class="Detailtitle-bottom-left">
+                            @* 后续加动态 *@
+                        </div>
+                        <div class="Detailtitle-bottom-right" id="Position-title-bottom">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="OrderStatus-Detail-content OutstandingPositions-Detail-content" id="OutstandingPositions-Detail-content">
+                    <div class="OutstandingPositions-Detail-TOP">
+                        未结算仓位详情
+                    </div>
+                    <div class="Detail-content-top">
+                        @**@
+                    </div>
+                </div>
+                @*<div class="OrderStatus-Detail-bottom OutstandingPositions-bottom">
+                    <button id="Trade">Trade</button>
+                </div>*@
+            </div>
+            <div class="show-Disclaimer" id="Position-show-Disclaimer">
+                    @*id="hide-Disclaimer"*@
+                <div class="Disclaimer-content">
+                </div>
+                <div class="Disclaimer-bottom" id="Position-hide-Disclaimer">
+                    我同意
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    @* Trade-form *@
+    <div id="ST-Trade" class="Trade-Top-div">
+        <div class="OrderStatus-Detail-top">
+            <div class="navbar colorHieght clear-shadow">
+                <div class="navbar-inner">
+                    <div class="left left-exit">
+                        <a href="#" class="link  icon-only Trade-exit">
+                            <i class="icon icon-exit"></i>
+                        </a>
+                    </div>
+                    <div class="Detail-top-title" id="ST-Trade-title">
+                        <a href="#">content</a>
+                        <div>s</div>
+                    </div>
+                </div>
+            </div>
+            <div class="colorHieght clear-shadow">
+                <div class="Detailtitle-bottom-left">
+                    @* 后续加动态 *@
+                </div>
+                <div class="Detailtitle-bottom-right" id="ST-Trade-title-bottom">
+
+                </div>
+            </div>
+        </div>
+        <div class="OrderStatus-Detail-content Trade-content-div">
+            <div class="Detail-content-top">
+                <p><span class="clerl-box">订单类型</span></p>
+                <p>
+                    <select id="ST-Ordertype">
+                        <option value="value">text</option>
+                    </select>
+                </p>
+                <p class="TriggerSpan"><span>触发价格</span><span>触发基于</span></p>
+                <p class="TriggerSpan">
+                    <input type="number" name="TriggerPrice" id="ST-TriggerPrice" value="" autocomplete="off" />
+                    <select id="ST-TriggerBased">
+                        <option value="3">Bid</option>
+                        <option value="1">Ask</option>
+                        <option value="2">Lastdone</option>
+                    </select>
+                </p>
+                <p><span>限价</span><span>数量</span></p>
+                <p>
+                    <input type="number" name="LimitedPrice" id="ST-LimitedPrice" value="" autocomplete="off" />
+                    <input type="number" name="Quantity" id="ST-Quantity" value="" autocomplete="off" />
+                </p>
+                <p class="CurrencyLotsize">@*<span>Contract Value</span>*@</p>
+                <p><span>付款方式</span><span>货币</span></p>
+                <p>
+                    <select id="ST-Payment">
+                        <option value="value">text</option>
+                    </select>
+                    <select id="ST-SettlementCurrency">
+                        <option value="value">text</option>
+                    </select>
+                </p>
+                <p><span class="clerl-box">确认密码</span></p>
+                <p class="TradePassword">
+                    <input type="password" id="ST-TradePassword" name="TradePassword" value="" />
+                </p>
+            </div>
+            <div class="ST-BOX"></div>
+        </div>
+        <div class="OrderStatus-Detail-bottom Trade-bottom-button">
+            <div class="ST-Amount">
+            </div>
+            <button id="ST-Buy" value="1">买</button>
+            <button id="ST-Sell" value="2">卖</button>
+        </div>
+    </div>
+    <div id="CFDTrade">
+        <div id="CFDTrade-Trade-content">
+            <div class="ContractSearch">
+                <span class="icon-exit"></span>
+                <input type="text" name="name" value="" id="CFD-Trade-Search" placeholder="通过代码或名称搜索" autocomplete="off" />
+                <span class="clear">×</span>
+            </div>
+            <div id="CFD-Search-list">
+                <ul>1</ul>
+            </div>
+        </div>
+    </div>
+    <div id="CFD-Trade" class="Trade-Top-div">
+        <div class="OrderStatus-Detail-top">
+            <div class="navbar colorHieght clear-shadow">
+                <div class="navbar-inner">
+                    <div class="left left-exit">
+                        <a href="#" class="link  icon-only Trade-exit">
+                            <i class="icon icon-exit"></i>
+                        </a>
+                    </div>
+                    <div class="Detail-top-title" id="CFD-Trade-title">
+                        <a href="#">content</a>
+                        <div>s</div>
+                    </div>
+                </div>
+            </div>
+            <div class="colorHieght clear-shadow">
+                <div class="Detailtitle-bottom-left">
+                    @*<h3>1</h3>
+                    <ul>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>*@
+                </div>
+                <div class="Detailtitle-bottom-right" id="CFD-Trade-title-bottom">
+
+                </div>
+            </div>
+        </div>
+        <div class="OrderStatus-Detail-content CFD-Trade-content">
+            <div class="Detail-content-top">
+                <div class="CFD-Trade-content-Top">
+                    <p><span class="clerl-box">订单类型</span></p>
+                    <p>
+                        <select id="CFD-Ordertype">
+                        </select>
+                    </p>
+                </div>
+                @* Limited-Order *@
+                <div id="CFD-Limited-Order">
+                    <p><span>限价</span><span>数量</span></p>
+                    <p class="input-input">
+                        <input type="number" name="LimitedPrice" value="" autocomplete="off" />
+                        <input type="number" name="Quantity" value="" autocomplete="off" />
+                    </p>
+                    <p class="CurrencyLotsize">@*<span>Contract Value</span>*@</p>
+                    <p class="Contract-Value">@*<span>Contract Value</span><span>111111</span>*@</p>
+                    <p class="Caution-Money-Require">@*<span>Caution Money Require</span><span>111111</span>*@</p>
+                    <p><span>期限</span><span>日期</span></p>
+                    <p class="select-input">
+                        <select class="Effectiveness">
+                        </select>
+                        <input type="date" name="CFD-Date" value="" autocomplete="off" />
+                    </p>
+                    <p><span class="clerl-box">确认密码</span><span></span></p>
+                    <p class="TradePassword">
+                        <input type="password" name="TradePassword" value="" autocomplete="off" />
+                    </p>
+                </div>
+                @* IF Done order *@
+                <div id="IF-Done-Order">
+                    <p class="select">
+                        <select id="Select-Order-No" style="width:100%;">
+                            <option>Select Order No</option>
+                        </select>
+                    </p>
+                    <p class="SpanRight"><span>限价</span><span>数量</span></p>
+                    <p class="input-input">
+                        <input type="number" class="Limit-Price" name="LimitedPrice" value="" autocomplete="off" />
+                        <input type="number" class="Quantity" name="Quantity" value="" autocomplete="off" />
+                    </p>
+                    <p class="CurrencyLotsize">@*<span>Contract Value</span>*@</p>
+                    <p class="Contract-Value">@*<span>Contract Value</span><span>111111</span>*@</p>
+                    <p class="Caution-Money-Require">@*<span>Caution Money Require</span><span>111111</span>*@</p>
+                    <p class="SpanRight"><span>期限</span><span>日期</span></p>
+                    <p class="select-input">
+                        <select class="Effectiveness"></select>
+                        <input type="date" name="CFD-Date" value="" autocomplete="off" />
+                    </p>
+                    <p><span class="clerl-box">确认密码</span><span></span></p>
+                    <p class="TradePassword">
+                        <input type="password" name="TradePassword" value="" autocomplete="off" />
+                    </p>
+                </div>
+                @* Stop-Limited-Order *@
+                <div id="CFD-Stop-Limited-Order">
+                    <p><span>止损价格</span><span>止损价格触发</span></p>
+                    <p class="input-select">
+                        <input type="number" name="StopPrice" value="" autocomplete="off" />
+                        <select>
+                            <option value="value">text</option>
+                        </select>
+                    </p>
+                    <p><span>限价</span><span>数量</span></p>
+                    <p class="input-input">
+                        <input type="number" name="LimitedPrice" value="" autocomplete="off" />
+                        <input type="number" name="Quantity" value="" autocomplete="off" />
+                    </p>
+                    <p class="CurrencyLotsize">@*<span>Contract Value</span>*@</p>
+                    <p class="Contract-Value">@*<span>Contract Value</span><span>111111</span>*@</p>
+                    <p class="Caution-Money-Require">@*<span>Caution Money Require</span><span>111111</span>*@</p>
+                    <p><span>期限</span><span>日期</span></p>
+                    <p class="select-input">
+                        <select class="Effectiveness">
+                        </select>
+                        <input type="date" name="CFD-Date" value="" autocomplete="off" />
+                    </p>
+                    <p><span class="clerl-box">确认密码</span><span></span></p>
+                    <p class="TradePassword">
+                        <input type="password" name="TradePassword" value="" autocomplete="off" />
+                    </p>
+                </div>
+                @* Trailling-Stop-Order *@
+                <div id="CFD-Trailling-Stop-Order">
+                    <p><span>跟踪步骤</span><span>止损价格触发</span></p>
+                    <p class="input-select">
+                        <input type="number" name="Tracestep" value="" autocomplete="off" />
+                        <select id="TrailingPrice">
+                            <option value="value">text</option>
+                        </select>
+                    </p>
+                    <p class="trailingStep"><span>跟踪止损价格:</span><span>content1</span></p>
+                    <p><span>限制差价</span><span>数量</span></p>
+                    <p class="input-input">
+                        <input type="number" name="LimitedPrice" value="" autocomplete="off" />
+                        <input type="number" name="Quantity" value="" autocomplete="off" />
+                    </p>
+                    <p class="limitSpread"><span>限制止损价格:</span><span>Lotsize</span></p>
+                    <p class="Contract-Value">@*<span>Contract Value</span><span>111111</span>*@</p>
+                    <p class="Caution-Money-Require">@*<span>Caution Money Require</span><span>111111</span>*@</p>
+                    <p><span>期限</span><span>日期</span></p>
+                    <p class="select-input">
+                        <select class="Effectiveness">
+                            <option value="value">text</option>
+                        </select>
+                        <input type="date" name="CFD-Date" value="" autocomplete="off" />
+                    </p>
+                    <p><span class="clerl-box">确认密码</span><span></span></p>
+                    <p class="TradePassword">
+                        <input type="password" name="TradePassword" value="" autocomplete="off" />
+                    </p>
+                </div>
+                @* OCO-Order *@
+                <div id="CFD-OCO-Order">
+                    <hr/><h6>OCO限价</h6>
+                    <p><span>限价</span><span>数量</span></p>
+                    <p class="input-input">
+                        <input type="number" name="LimitedPrice" value="" autocomplete="off" />
+                        <input type="number" name="Quantity" value="" autocomplete="off" />
+                    </p>
+                    <p class="CurrencyLotsize">@*<span>Contract Value</span>*@</p>
+                    <p class="Caution-Money-Require">@*<span>Caution Money Require</span><span>111111</span>*@</p>
+
+                    <hr /><h6>OCO止损限价</h6>
+                    <p><span>止损限价</span><span>止损限价触发</span></p>
+                    <p class="input-select">
+                        <input type="number" name="StopPrice" value="" autocomplete="off" />
+                        <select>
+                            <option value="value">text</option>
+                        </select>
+                    </p>
+                    <p><span>限价</span><span>数量</span></p>
+                    <p class="input-input1">
+                        <input type="number" name="LimitedPrice" value="" autocomplete="off" />
+                        <input type="number" name="Quantity" value="" autocomplete="off" />
+                    </p>
+                    <p class="CurrencyLotsize">@*<span>Contract Value</span>*@</p>
+                    <p class="Caution-Money-Require">@*<span>Caution Money Require</span><span>111111</span>*@</p>
+                    <p><span>期限</span><span>日期</span></p>
+                    <p class="select-input">
+                        <select class="Effectiveness">
+                            <option value="value">text</option>
+                        </select>
+                        <input type="date" name="CFD-Date" value="" autocomplete="off" />
+                    </p>
+                    <p><span class="clerl-box">确认密码</span><span></span></p>
+                    <p class="TradePassword">
+                        <input type="password" name="TradePassword" value="" autocomplete="off" />
+                    </p>
+                </div>
+                @* Contingency Order *@
+                <div id="CFD-Contingency-Order">
+                    <p><span>合约</span><span></span></p>
+                    <p class="select">
+                        <input type="text" style="width: 100%;" name="Price" id="CFD-Contingency-Contrtact" byvalue="" value="" readonly autocomplete="off" />
+                    </p>
+                    <p><span>条件</span><span>价格</span></p>
+                    <p class="select-input">
+                        <select>
+                            <option value="value">text</option>
+                        </select>
+                        <input type="number" name="Price" value="" autocomplete="off" />
+                    </p>
+                    <p><span>限价</span><span>数量</span></p>
+                    <p class="input-input">
+                        <input type="number" name="LimitedPrice" value="" autocomplete="off" />
+                        <input type="number" name="Quantity" value="" autocomplete="off" />
+                    </p>
+                    <p class="CurrencyLotsize">@*<span>Contract Value</span>*@</p>
+                    <p class="Contract-Value">@*<span>Contract Value</span><span>111111</span>*@</p>
+                    <p class="Caution-Money-Require">@*<span>Caution Money Require</span><span>111111</span>*@</p>
+                    <p><span>期限</span><span>日期</span></p>
+                    <p class="select-input1">
+                        <select class="Effectiveness">
+                            <option value="value">text</option>
+                        </select>
+                        <input type="date" name="CFD-Date" value="" autocomplete="off" />
+                    </p>
+                    <p><span class="clerl-box">确认密码</span><span></span></p>
+                    <p class="TradePassword">
+                        <input type="password" id="CFD-TradePassword" name="TradePassword" value="" autocomplete="off" />
+                    </p>
+                </div>
+
+            </div>
+            <div class="CFD-BOX"></div>
+        </div>
+        <div class="OrderStatus-Detail-bottom Trade-bottom-button">
+            <div class="CFD-Amount">
+            </div>
+            <button id="CFD-Buy" value="1">买</button>
+            <button id="CFD-Sell" value="2">卖</button>
+        </div>
+    </div>
+    <div id="UT-Trade" class="Trade-Top-div1">
+        <div class="OrderStatus-Detail-top">
+            <div class="navbar colorHieght clear-shadow">
+                <div class="navbar-inner">
+                    <div class="left left-exit">
+                        <a href="#" class="link  icon-only Trade-exit">
+                            <i class="icon icon-exit"></i>
+                        </a>
+                    </div>
+                    <div class="Detail-top-title" id="UT-Trade-title">
+                        <a href="#">content</a>
+                        <div>s</div>
+                    </div>
+                </div>
+            </div>
+            <div class="colorHieght clear-shadow">
+                <div class="Detailtitle-bottom-left">
+                    @* 后续加动态 *@
+                </div>
+                <div class="Detailtitle-bottom-right" id="UT-Trade-title-bottom">
+
+                </div>
+            </div>
+        </div>
+        <div class="OrderStatus-Detail-content UT-Trade-content">
+            
+            <p style="color:#333;">执行</p>
+           @* change class *@
+            <div class="UT_trading_manner">
+                <ul>
+                    <li value="Buy">买</li>
+                    <li value="Sell" disabled="disabled">卖</li>
+                    <li value="Switch" disabled="disabled">转换</li>
+                </ul>
+            </div>
+
+            @* Buy *@
+            <div id="UT_Trade_content_Buy">
+                <p><span>投资金额</span></p>
+                <p class="input"><input type="number" name="Amount" value="" autocomplete="off" /></p>
+                <p class="MIA"></p>
+                <p class="MAA"></p>
+                <p class="SE"></p>
+                <p><span>基金来源</span><span>支持货币</span></p>
+                <p class="select-select">
+                    <select>
+                        <option value="value">text</option>
+                    </select>
+                    <select>
+                        <option value="value">text</option>
+                    </select>
+                </p>
+                <p><span>交易密码</span></p>
+                <p class="TradePassword">
+                    <input type="password" name="TradePassword" autocomplete="off" />
+                </p>
+                @* 提醒文字 and pdf *@
+                <div class="FonetSize_Info">
+                    注:基金单位的申请将被视为与以下基金招股说明书一起提供，您应在完成本申请前阅读招股说明书。
+                </div>
+                <div class="PDF_Info"></div>
+            </div>
+
+            @* Sell *@
+            <div id="UT_Trade_content_Sell" style="display:none">
+                <p><span>数量单位</span></p>
+                <p class="input"><input type="number" name="Amount" value="" autocomplete="off" /></p>
+                <p><span>卖参考/切换</span></p>
+                <div class="The_Reference">
+                    <select></select>
+                </div>
+                <p><span>基金来源</span><span>支持货币</span></p>
+                <p class="select-select">
+                    <select>
+                        <option value="value">text</option>
+                    </select>
+                    <select>
+                        <option value="value">text</option>
+                    </select>
+                </p>
+                <p><span>交易密码</span></p>
+                <p class="TradePassword">
+                    <input type="password" name="TradePassword" autocomplete="off" />
+                </p>
+            </div>
+
+            @* Switch *@
+            <div id="UT_Trade_content_Switch" style="display:none">
+                <p>断开/卖</p>
+                <div class="Switch_title_div">
+                    <div class="Detail-top-title Switch_title">
+                        <a href="#">content</a>
+                        <div>s</div>
+                    </div>
+                </div>
+                <p><span>数量单位</span></p>
+                <p class="input"><input type="number" name="Amount" value="" autocomplete="off" /></p>
+                <p><span>转换参考/切换</span></p>
+                <div class="The_Reference">
+                    <select></select>
+                </div>
+                <p><span>基金来源</span><span>支持货币</span></p>
+                <p class="select-select">
+                    <select>
+                        <option value="value">text</option>
+                    </select>
+                    <select>
+                        <option value="value">text</option>
+                    </select>
+                </p>
+                <p>接通/买</p>
+                <p><span>基金</span></p>
+                <div class="Search">
+                     <div class="">
+                            @* Detail-top-title Switch_title *@
+                                @*<a href="#">content</a>
+                            <div>s</div>*@
+                        <input type="text" name="Amount" value="" placeholder="点击查找基金名称" autocomplete="off" />
+                    </div>
+                </div>
+                <p><span>交易密码</span></p>
+                <p class="TradePassword">
+                    <input type="password" name="TradePassword" autocomplete="off" />
+                </p>
+            </div>
+
+            <div class="UT-BOX"></div>
+        </div>
+        <div class="OrderStatus-Detail-bottom Trade-bottom-button">
+            <div class="UT-Amount">
+            </div>
+            @*<button id="UT-Buy" value="Buy">Buy</button>
+            <button id="UT-Buy" disabled="disabled" value="Sell">Sell</button>
+            <button id="UT-Buy" disabled="disabled" value="Switch">Switch</button>*@
+            <div class="UT_Trade_submit">提交</div>
+        </div>
+    </div>
+    <div id="UTTrade">
+        <div id="UTTrade-Trade-content">
+            <div class="ContractSearch">
+                <span class="icon-exit"></span>
+                <input type="text" name="name" value="" id="UT-Trade-Search" placeholder="用符号或名称搜索" autocomplete="off" />
+                <span class="clear">×</span>
+            </div>
+            <div id="UT-Search-list">
+                <ul>1</ul>
+            </div>
+        </div>
+    </div>
+    <div id="trade_UT_INfo" class="trade_Info">
+        <div class="OrderStatus-Detail-top">
+            <div class="navbar colorHieght clear-shadow">
+                <div class="navbar-inner">
+                    <div class="left left-exit">
+                        <a href="#" class="link  icon-only trade_Info_exit">
+                            <i class="icon icon-exit"></i>
+                        </a>
+                    </div>
+                    <div class="Detail-top-title" id="trade_UT_INfo_title">
+                        <a href="#">content</a>
+                        <div>s</div>
+                    </div>
+                </div>
+            </div>
+            <div class="colorHieght clear-shadow">
+                <div class="Detailtitle-bottom-left">
+                    @* 后续加动态 *@
+                </div>
+                <div class="Detailtitle-bottom-right">
+
+                </div>
+            </div>
+        </div>
+        <div class="OrderStatus-Detail-content" id="UT_trade_Info">
+            @* UT trade  Info *@
+            <div class="UT_trade_Info_top">
+                <div>
+                    <a href="#General_Infos" class="tab-link active">基本资料</a>
+                    <a href="#Performance" class="tab-link">表现</a>
+                    <a href="#Documents" class="tab-link">文件</a>
+                    <a href="#Regular_Savings_Plan" class="tab-link">定期定额储蓄计划</a>
+                    <a href="#Fund_Manager_Info" class="tab-link">基金经理信息</a>
+                </div>
+            </div>
+            <div class="tabs" style="margin-top: 3rem;">
+                <div id="General_Infos" class="tab active">
+                    <div class="General_Info_content">
+                        <div class="Low_High">
+                            <ul>
+                                <li>4周最高</li>
+                                <li>-</li>
+                            </ul>
+
+                            <ul>
+                                <li>4周最低</li>
+                                <li>-</li>
+                            </ul>
+                        </div>
+                        <div id="General_Info">
+                            <div class="accordion-item accordion-item-expanded">
+                                <div class="accordion-item-toggle before">基本信息<span></span></div>
+                                <div class="accordion-item-content padding_content">
+                                    <ol>
+                                        <li>
+                                            <ol>
+                                                <li>基金货币</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li style="width:52%;">辉立证券风险分类</li>
+                                                <li style="width:47%;">-</li>
+                                            </ol>
+                                        </li>
+
+
+                                        <li>
+                                            <ol>
+                                                <li>CPF风险分类</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li>资产类别</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li>板块</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li>发行日期</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li>发行价</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li>地理</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li style="width:37%;">基准指数</li>
+                                                <li style="width: 63%;font-size: 10px;line-height: 19px;">-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li>价格类型</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li>价格已知</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li>交易截止时间</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li>基金来源</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Investment_Objective">
+                            <div class="accordion-item accordion-item-expanded">
+                                <div class="accordion-item-toggle before">投资目标<span></span></div>
+                                <div class="accordion-item-content padding_content">
+                                    <p>
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Investment_Amount">
+                            <div class="accordion-item accordion-item-expanded">
+                                <div class="accordion-item-toggle before">投资金额<span></span></div>
+                                <div class="accordion-item-content padding_content">
+                                    <div class="scroll_Left" id="Investment_Amount_Left">
+                                        <ul>
+                                            <li></li>
+                                            <li>-</li>
+                                        </ul>
+                                    </div>
+                                    <div class="scroll_Content" id="Investment_Amount_Content">
+                                        <ul>
+                                            <li>现金</li>
+                                            <li>SRS-IA</li>
+                                            <li>CPEOA-IA</li>
+                                            <li>CPESA-IA</li>
+                                        </ul>
+                                        <ul>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Relevant_Charges">
+                            <div class="accordion-item accordion-item-expanded">
+                                <div class="accordion-item-toggle before">相关费用<span></span></div>
+                                <div class="accordion-item-content padding_content">
+                                    <div class="scroll_Left" id="Relevant_Charges_Left">
+                                        <ul>
+                                            <li></li>
+                                            <li>-</li>
+                                        </ul>
+                                    </div>
+                                    <div class="scroll_Content" id="Relevant_Charges_Content">
+                                        <ul>
+                                            <li>现金</li>
+                                            <li>SRS-IA</li>
+                                            <li>CPEOA-IA</li>
+                                            <li>CPESA-IA</li>
+                                        </ul>
+                                        <ul>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Fund_Awards">
+                            <div class="accordion-item accordion-item-expanded">
+                                <div class="accordion-item-toggle before">基金奖励<span></span></div>
+                                <div class="accordion-item-content padding_content">
+                                    <div class="scroll_Left" id="Fund_Awards_Left">
+                                        <ul>
+                                            <li></li>
+                                            <li>-</li>
+                                        </ul>
+                                    </div>
+                                    <div class="scroll_Content" id="Fund_Awards_Content">
+                                        <ul>
+                                            <li>现金</li>
+                                            <li>SRS-IA</li>
+                                            <li>CPEOA-IA</li>
+                                            <li>CPESA-IA</li>
+                                        </ul>
+                                        <ul>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                        </ul>
+                                    </div>
+                                    <div></div>
+                                    <div class="scroll_Left" id="Fund_Awards_Left1">
+                                        <ul>
+                                            <li></li>
+                                            <li>-</li>
+                                        </ul>
+                                    </div>
+                                    <div class="scroll_Content" id="Fund_Awards_Content1">
+                                        <ul>
+                                            <li>Cash</li>
+                                            <li>SRS-IA</li>
+                                            <li>CPEOA-IA</li>
+                                            <li>CPESA-IA</li>
+                                        </ul>
+                                        <ul>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Performance" class="tab">
+                    <div class="Performance_content">
+                        <h3 class="title padding_content">表现回报率(%)</h3>
+                        <div id="Performance_chart"></div>
+                        <div class="Performance_content_table padding_content" id="Performance_table">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th></th>
+                                        <td class="table_Top_name">1</td>
+                                        <td><button class="Compare">对比</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h3 class="title padding_content">年化收益率(%)</h3>
+                        <div id="Performance_chart1"></div>
+                        <div class="Performance_content_table padding_content" id="Performance_table1">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th></th>
+                                        <td class="table_Top_name">1</td>
+                                        <td><button class="Compare">对比</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="Documents" class="tab">
+                    <div class="Documents_content padding_content">
+                        <div class="Documents_content_chunk">
+                            <h4>ss</h4>
+                            <p>2</p>
+                        </div>
+                        <div class="Documents_content_chunk">
+                            <h4>ss</h4>
+                            <p>2</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="Regular_Savings_Plan" class="tab">
+                    <div class="Regular_Savings_Plan_content padding_content">
+                        <p>Learn more about Regular Savings Plan</p>
+                        <h4 class="Regular_Savings_Plan_title">每月定期储蓄计划费用</h4>
+                        <div class="scroll_Left" id="Regular_Savings_Plan_Left">
+                            <ul>
+                                <li></li>
+                                <li>1</li>
+                            </ul>
+                        </div>
+                        <div class="scroll_Content" id="Regular_Savings_Plan_Content">
+                            <ul>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                            </ul>
+                            <ul>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                            </ul>
+                        </div>
+                        <h4 class="Regular_Savings_Plan_title">每季度定期储蓄计划费用</h4>
+                        <div class="scroll_Left" id="Regular_Savings_Plan_Left1">
+                            <ul>
+                                <li></li>
+                                <li>1</li>
+                            </ul>
+                        </div>
+                        <div class="scroll_Content" id="Regular_Savings_Plan_Content1">
+                            <ul>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                            </ul>
+                            <ul>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                            </ul>
+                        </div>
+                        <div class="clear_box"></div>
+                    </div>
+                </div>
+                <div id="Fund_Manager_Info" class="tab">
+                    <div class="Fund_Manager_Info_content padding_content">
+                        <h4>Fund Manager Information</h4>
+                        <img src="http://internetfileserver.phillip.com.sg/Poems/UnitTrust/Product%20Providers_Logo/UOBAM.gif" alt="Alternate Text" />
+                        <p>1111</p>
+                        <p><a href="javascript:;">1111</a></p>
+                        <h3>About Fund Manager</h3>
+                        <p>1111</p>
+                        <h3>11111</h3>
+                    </div>
+                </div>
+                <div class="UT-BOX"></div>
+            </div>
+            <div class="OrderStatus-Detail-bottom Info_button">
+                <div id="UT_trade">现在购买</div>
+            </div>
+        </div>
+    </div>
+    <div id="FTFXFXMN-Trade" class="Trade-Top-div">
+        <div class="OrderStatus-Detail-top">
+            <div class="navbar colorHieght clear-shadow">
+                <div class="navbar-inner">
+                    <div class="left left-exit">
+                        <a href="#" class="link  icon-only Trade-exit">
+                            <i class="icon icon-exit"></i>
+                        </a>
+                    </div>
+                    <div class="Detail-top-title" id="FTFXFXMN-Trade-title">
+                        <a href="#">content</a>
+                        <div>s</div>
+                    </div>
+                </div>
+            </div>
+            <div class="colorHieght clear-shadow">
+                <div class="Detailtitle-bottom-left">
+                    @* 后续加动态 *@
+                </div>
+                <div class="Detailtitle-bottom-right" id="FTFXFXMN-Trade-title-bottom">
+
+                </div>
+            </div>
+        </div>
+        <div class="OrderStatus-Detail-content FTFXFXMN-Trade-content">
+            <div class="Detail-content-top">
+                <div class="CFD-Trade-content-Top">
+                    <p><span class="clerl-box">订单类型</span></p>
+                    <p>
+                        <select id="FTFXFXMN-Ordertype"></select>
+                    </p>
+                </div>
+                @* Limited-Order *@
+                <div id="FTFXFXMN-Limited-Order">
+                    <p class="stopLimitPrice"><span>止损限价</span></p>
+                    <p class="stopLimitPrice">
+                        <input type="number" name="StopPrice" value="" autocomplete="off" />
+                    </p>
+                    <p class="ocoPrice"><span>OCO价格</span></p>
+                    <p class="ocoPrice">
+                        <input type="number" name="ocoPrice" value="" autocomplete="off" />
+                    </p>
+                    <p><span>限价</span><span>数量</span></p>
+                    <p class="input-input">
+                        <input type="number" name="LimitedPrice" value="" autocomplete="off" />
+                        <input type="number" name="Quantity" value="" autocomplete="off" />
+                    </p>
+                    <p class="Contract-Value">@*<span>Contract Value</span><span>111111</span><span></span><span></span>*@</p>
+                    <p class="Caution-Money-Require">@*<span>Caution Money Require</span><span>111111</span><span></span><span></span>*@</p>
+                    <p style="clear:both"><span>期限</span></p>
+                    <p class="select-input">
+                        <select class="Effectiveness"></select>
+                    </p>
+                    <p><span class="clerl-box">确认密码</span><span></span></p>
+                    <p class="TradePassword">
+                        <input type="password" name="TradePassword" value="" autocomplete="off" />
+                    </p>
+                </div>
+
+            </div>
+            <div class="FTFXFXMN-BOX"></div>
+        </div>
+        <div class="OrderStatus-Detail-bottom Trade-bottom-button">
+            <div class="FTFXFXMN-Amount">
+            </div>
+            <button id="FTFXFXMN-Buy" value="1">买</button>
+            <button id="FTFXFXMN-Sell" value="0">卖</button>
+        </div>
+    </div>
+        
+
+
+
+    <div id="dialog2" style="display: none;">
+        <div class="dialog-content">
+            <div class="dialog_hd"></div>
+            <div class="weui_dialog_bd"></div>
+            <div class="weui_btn_dialog">
+                <a href="javascript:;">确定</a>
+            </div>
+        </div>
+    </div>
+    <div id="dialog2x" style="display: none;">
+        <div class="dialog-content">
+            <div class="dialog_hd"></div>
+            <div class="weui_dialog_bd"></div>
+            <div class="weui_btn_Two">
+                <a href="javascript:;" class="weui_btn_Two_ok">提交</a>
+                <a href="javascript:;" class="weui_btn_Two_cancel">取消</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="twoFA_content">
+        <div class="dialog-content twoFA_content">
+            <div class="dialog_hd">
+                <div class="twoFA_hd_top">
+                    2FA 登录
+                </div>
+                <div class="twoFA_hd_bom">
+                    <ol>
+                        <li>Access without 2FA</li>
+                        <li>2FA Signup</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="dialog_tt">
+                <p>You have not enabled the optional 2FA for this account. To proceed without 2FA, please acknowledge the 2FA Risk Awareness Statement.</p>
+                <p><input type="checkbox" />I have read and acknowledged the <span class="RAS">Risk Awareness Statement(RAS)</span></p>
+            </div>
+            <div class="weui_btn_Two">
+                <a href="javascript:;" disabled="disabled" id="twoFA_proceed">Proceed</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading" style="display:block;background:#fff;">
+        <div class="loading-content">
+            <!-- :) -->
+            <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+            <p class="loading-content-p"></p>
+        </div>
+
+    </div>
+
+
+    <script src="~/Content/Public/javascript/echarts.js?121110"></script>
+</body> 
+</html>

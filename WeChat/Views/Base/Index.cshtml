@@ -1,0 +1,1682 @@
+﻿@{
+    ViewBag.Title = "POEMS";
+}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache,no-store">
+    <title>POEMS</title>
+    <script src="~/Content/Public/E2EE/base64_jso.js"></script>
+    <script src="~/Content/Public/E2EE/md5.js"></script>
+    <script src="~/Content/Public/E2EE/hashprc_jso.js"></script>
+    <script src="~/Content/Public/E2EE/jsbn_jso.js"></script>
+    <script src="~/Content/Public/E2EE/prng4_jso.js"></script>
+    <script src="~/Content/Public/E2EE/rng_jso.js"></script>
+    <script src="~/Content/Public/E2EE/rsa_jso.js"></script>
+    <script src="~/Content/Public/javascript/framework7.min.js?122610"></script>
+    <script src="~/Content/Public/javascript/jquery-1.11.1.js"></script>
+    <script src="~/Content/Public/javascript/pmp.latest.min.v3.0.0.4.js?62312"></script>
+    <script src="~/Content/Public/javascript/echarts.min.js"></script>
+    <script src="~/Content/English/ViewJs/wechat-app.js?01231201"></script>
+    <script src="~/Content/Public/javascript/quotation-data.js?121314"></script>
+
+    <link href="~/Content/Public/css/framework7.min.css" rel="stylesheet" />
+    <link href="~/Content/Public/css/dialog.css?0123110" rel="stylesheet" />
+    <link href="~/Content/English/CSS/Index.css?121114" rel="stylesheet" />
+    <link href="~/Content/English/CSS/TradeForm.css?011109" rel="stylesheet" />
+
+</head>
+<body>
+    <!-- Status bar overlay for full screen mode -->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay close-panel"></div>
+    <!-- Left panel with reveal effect-->
+
+    <div id="menus-black-div" class="panel panel-left panel-reveal close-panel">
+        <div class="menus-title-img"><img src="~/Content/Public/img/logo.png" alt="" /></div>
+        <div class=" list-block">
+            <ul>
+                <li class="item-content" id="Watchlist">
+                    <div class="item-media"><a href="#tabWatchlist" class="tab-mainFrame tab-link active close-panel icon-Watchlist"></a></div>
+                    <a href="#tabWatchlist" class="tab-mainFrame tab-link active close-panel">Watchlist</a>
+                </li>
+                <li class="item-content" id="Trades">
+                    <div class="item-media"><a href="#tabTrade" class="tab-mainFrame tab-link active close-panel icon-Trade"></a></div>
+                    <a href="#tabTrade" class="tab-mainFrame tab-link active close-panel">Trade</a>
+                </li>
+                <li class="item-content" id="OrderStatus">
+                    <div class="item-media"><a href="#tabOrdStats" class="tab-mainFrame tab-link active close-panel icon-OrderStatus"></a></div>
+                    <a href="#tabOrdStats" class="tab-mainFrame tab-link active close-panel">Order Status</a>
+                </li>
+                <li class="item-content" id="Portfolio">
+                    <div class="item-media"><a href="#tabPortfolio" class="tab-mainFrame tab-link active close-panel icon-Portfolio"></a></div>
+                    <a href="#tabPortfolio" class="tab-mainFrame tab-link active close-panel">Portfolio</a>
+                </li>
+                <li class="item-content" id="Position">
+                    <div class="item-media"><a href="#tabPosition" class="tab-mainFrame tab-link active close-panel icon-OutsPositions"></a></div>
+                    <a href="#tabPosition" class="tab-mainFrame tab-link active close-panel">Outstanding Positions</a>
+                </li>
+                @*<li class="item-content" id="TransHistory">
+                        <div class="item-media"><a href="#tabTransHis" class="tab-mainFrame tab-link active close-panel icon-TransHistory"></a></div>
+                        <a href="#tabTransHis" class="tab-mainFrame tab-link active close-panel">Transaction History</a>
+                    </li>
+                    <li class="item-content" id="Setting">
+                        <div class="item-media"><a href="#tabSetting" class="tab-mainFrame tab-link active close-panel icon-Setting"></a></div>
+                        <a href="#tabSetting" class="tab-mainFrame tab-link active close-panel">Setting</a>
+                    </li>*@
+                <li class="item-content" id="Logout">
+                    <div class="item-media"><a class="icon-Logout"></a></div>
+                    <a class="tab-mainFrame tab-link active close-panel">Logout</a>
+                </li>
+            </ul>
+        </div>
+        <div id="LanguageSwitch">
+            <div class="LanguageSwitch-left">
+                Language:
+            </div>
+            <div class="LanguageSwitch-right">
+                <label><input name="radio" type="radio" value="" />中文 </label>
+                <label><input name="radio" type="radio" value="" checked="checked" />English </label>
+            </div>
+        </div>
+    </div>
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-right panel-cover">
+        <div class="content-block">
+            <p>Right panel content goes here</p>
+        </div>
+    </div>
+
+    <!-- Tabs, now tabs wrapper is "views" -->
+    <div class="views tabs">
+        <!-- Tab 1 - View 1, active by default -->
+        <div id="tabWatchlist" class="view tab view-watchlist">
+            <div class="navbar colorHieght zIndex" style="position: fixed;">
+                <div class="navbar-inner">
+                    <div class="left">
+                        <a href="#" data-panel="left" class="link open-panel Menus-Black icon-only" id="">
+                            <i class="icon icon-bars"></i>
+                        </a>
+                    </div>
+                    <div class="Watchlist-title">
+                        <div id="Watchlist-title-Text">
+                            Watchlist
+                            <span></span>
+                        </div>
+                        <div id="Watchlist-drop-down" style="display:none;">
+                            <ul>
+                                <li>Watchlist</li>
+                            </ul>
+                        </div>
+                    </div>
+                    @*<div id="Subrefresh"></div>*@
+                    <div class="right" id="Edit">
+                        Edit
+                    </div>
+                </div>
+            </div>
+            <div id="Watchlist-content">
+                <div class="ContractSearch">
+                    <input type="text" name="name" value="" id="AddWatchlist" placeholder="+Add Instrument to Watchlist" autocomplete="off" />
+                    <div id="Watchlist-search-list">
+                        @*  *@
+                    </div>
+                    <select autocomplete="off">
+                        <option value="127">All</option>
+                        <option value="1">EQ</option>
+@Html.Raw(ViewData["optCFD"])
+                        @*<option value="2">CFD</option>
+                            <option value="4">CFDDMA</option>*@
+                        <option value="8">FUT</option>
+                        <option value="16">REGFX</option>
+                        <option value="32">MiniFX</option>
+@Html.Raw(ViewData["optUT"])
+                        @*<option value="64">UT</option>*@
+                    </select>
+                    <span class="clear">×</span>
+                </div>
+                <div class="Contract-information-name">
+                    <div class="information-name-left">
+                        <ul id="Watchlist-contract-name">
+                            @*  Watchlist-contract-name 的高度按实际数据添加的*@
+                        </ul>
+                    </div>
+                    <div class="information-name-top">
+                        <div class="information-name-top_div">
+                            <ul class="top_div-name">
+                                <li>Name</li>
+                                <li>Bid</li>
+                                <li>Ask</li>
+                                <li>LastDone</li>
+                                <li>Change</li>
+                                <li>BVol(K)</li>
+                                <li>SVol(K)</li>
+                                <li>Volk</li>
+                                <li>Open</li>
+                                <li>High</li>
+                                <li>Low</li>
+                                <li>PrevClose</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="information-name-content">
+                        <div id="information-name-content_div">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="Watchlist-Edit-details">
+                <div class="OrderStatus-Detail-top">
+                    <div class="navbar colorHieght clear-shadow">
+                        <div class="navbar-inner">
+                            <div class="left left-exit">
+                                <a href="#" class="link  icon-only Watchlist-Edit-exit">
+                                    <i class="icon icon-exit"></i>
+                                </a>
+                            </div>
+                            <div class="Detail-top-title" id="Edit-details-title">
+                                Operation
+                            </div>
+                            <div class="right" id="Complete">
+                                Complete
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="OrderStatus-Detail-content">
+                    <ul>
+                        @*  *@
+                    </ul>
+                </div>
+                <div class="OrderStatus-Detail-bottom">
+                    <button class="remove" value="1">Remove</button>
+                    @*<button class="move" value="0">Move</button>*@
+                </div>
+            </div>
+        </div>
+
+        <div id="tabTrade" class="view tab view-trade">
+            <div class="navbar colorHieght" style="position: fixed;">
+                <div class="navbar-inner">
+                    <div class="left">
+                        <a href="#" data-panel="left" class="link open-panel Menus-Black icon-only" id="">
+                            <i class="icon icon-bars"></i>
+                        </a>
+                    </div>
+                    <div class="Trade-title">
+                        Trade
+                    </div>
+                </div>
+            </div>
+            <div id="Trade-content">
+                <div class="ContractSearch">
+                    <input type="text" name="name" value="" id="Trade-Search" placeholder="Search by symbol or name" autocomplete="off" />
+                    <select autocomplete="off">
+                        <option value="127">All</option>
+                        <option value="1">EQ</option>
+@Html.Raw(ViewData["optCFD"])
+                        @*<option value="2">CFD</option>
+                        <option value="4">CFDDMA</option>*@
+                        <option value="8">FUT</option>
+                        <option value="16">REGFX</option>
+                        <option value="32">MiniFX</option>
+@Html.Raw(ViewData["optUT"])
+                        @*<option value="64">UT</option>*@
+                    </select>
+                    <span class="clear">×</span>
+                </div>
+
+                <div class="Trade-ContractSearch" id="history-Trade-ContractSearch">
+                    <div class="Contract-title">
+                        Search history
+                    </div>
+                    <div class="Trade-search-list" id="history-search-list">
+                        <ul>
+                            @*  *@
+                        </ul>
+                    </div>
+                </div>
+                <div class="Trade-ContractSearch" id="Trade-ContractSearch">
+                    <div class="Trade-search-list" id="Trade-search-list">
+                        <ul>
+                            @*  *@
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="tabOrdStats" class="view tab view-ordstats">
+            <div class="navbar colorHieght">
+                <div class="navbar-inner">
+                    <div class="left">
+                        <a href="#" data-panel="left" class="link open-panel Menus-Black icon-only" id="">
+                            <i class="icon icon-bars"></i>
+                        </a>
+                    </div>
+                    <div class="center tabOrdStats-title">
+                        Order Status
+                    </div>
+                </div>
+            </div>
+            <div class="pages tabs navbar-fixed toolbar-fixed">
+                <div data-page="page-3-1" class="page with-subnavbar tab no-swipeback" id="page-3-1">
+                    <div class="Order-content">
+                        <div class="Order-content-top">
+                            <a href="#TodayOrder" class="tab-link active">Today Order</a>
+                            <a href="#OrderHistory" class="tab-link">Order History</a>
+                        </div>
+                        <div class="tabs-animated-wrap">
+                            <div class="tabs" style="transform: translate3d(0%, 0px, 0px);">
+                                <div id="TodayOrder" class="tab active">
+                                    <div class="pages">
+                                        <div class="page">
+                                            <div class="Contract-information-name OrderStatus-content">
+                                                <div class="information-name-left OrderStatus-left">
+                                                    <ul id="TodayOrder-contract-name">
+                                                        @* #TodayOrder-contract-name 的高度按实际数据添加的*@
+                                                    </ul>
+                                                </div>
+                                                <div class="information-name-top OrderStatus-top">
+                                                    <div class="information-name-top_div">
+                                                        <ul class="top_div-name">
+                                                            <li>Name</li>
+                                                            <li class="Status">Status</li>
+                                                            <li class="submitted">Submitted</li>
+                                                            <li class="executed">Executed</li>
+                                                            <li class="orderType">Order Type</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="information-name-content OrderStatus-content-content">
+                                                    <div id="TodayOrder-content-details">
+                                                        @* #TodayOrder-content-details *@
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="OrderHistory" class="tab">
+                                    <div class="pages">
+                                        <div class="page">
+                                            <div class="Contract-information-name OrderStatus-content">
+                                                <div class="OrderStatus-Historicaldate" autocomplete="off">
+                                                    <select id="OrderHistory-select">
+                                                        @*<option value="value">text</option>*@
+                                                    </select>
+                                                </div>
+                                                <div class="information-name-left OrderHistory-left">
+                                                    <ul id="OrderHistory-contract-name">
+                                                        @* #OrderHistory-contract-name 的高度按实际数据添加的*@
+                                                    </ul>
+                                                </div>
+                                                <div class="information-name-top OrderStatus-top">
+                                                    <div class="information-name-top_div">
+                                                        <ul class="top_div-name">
+                                                            <li>Name</li>
+                                                            <li class="Status">Status</li>
+                                                            <li class="submitted">Submitted</li>
+                                                            <li class="executed">Executed</li>
+                                                            <li class="orderType">Order Type</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="information-name-content OrderHistory-content-content">
+                                                    <div id="OrderHistory-content-details">
+                                                        @* #OrderHistory-content-details *@
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-page="page-3-6" class="page with-subnavbar tab no-swipeback" id="page-3-6">
+                    <div class="page-content">
+                        敬请期待!
+                    </div>
+                </div>
+            </div>
+            <div class="Modular-Detail" style="display:none;">
+                <div class="OrderStatus-Detail-top">
+                    <div class="navbar colorHieght clear-shadow">
+                        <div class="navbar-inner">
+                            <div class="left left-exit">
+                                <a href="#" class="link  icon-only Modular-Detail-exit">
+                                    <i class="icon icon-exit"></i>
+                                </a>
+                            </div>
+                            <div class="Detail-top-title" id="OrderStatus-Detail-title">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colorHieght clear-shadow">
+                        <div class="Detailtitle-bottom-left">
+                            @* 后续加动态 *@
+                        </div>
+                        <div class="Detailtitle-bottom-right" id="OrderDetail-title-bottom">
+
+                        </div>
+
+                    </div>
+                    <div class="Detailtitle-top-last">
+                        Order Status Detail
+                    </div>
+                </div>
+                <div class="OrderStatus-Detail-content" id="OrderStatus-Detail-content">
+                    <div class="Detail-content-top">
+                        @**@
+                    </div>
+                    <div class="Detail-content-bottom">
+                        <div class="Detail-bottom-title-name">Order History Log</div>
+                        <div class="Detail-bottom-title">
+                            <ul>
+                                <li>Status</li>
+                                <li>Quantity&nbsp;/&nbsp;Price</li>
+                                <li>Date time</li>
+                            </ul>
+                        </div>
+                        <div class="Detail-bottom-title-content">
+                            @**@
+                        </div>
+                    </div>
+                </div>
+                <div class="OrderStatus-Detail-bottom">
+                    <button id="Withdraw">Withdraw</button>
+                    <button id="Amend">Amend</button>
+                </div>
+            </div>
+            <div id="Withdraw-div">
+                <div>
+                    @**@
+                </div>
+            </div>
+            <div id="Amend-div">
+                <div>
+                    @**@
+                </div>
+            </div>
+        </div>
+
+        <div id="tabPortfolio" class="view tab view-portfolio">
+            <div class="navbar Portfolio">
+                <div class="navbar-inner">
+                    <div class="left">
+                        <a href="#" data-panel="left" class="link open-panel Menus-Black icon-only" id="">
+                            <i class="icon icon-bars"></i>
+                        </a>
+                    </div>
+                    <div class="Portfolio-top-title" id="Portfolio-top-title">
+
+                    </div>
+                </div>
+                @*<div class="Portfolio-top-title" id="Portfolio-top-title">
+
+                </div>*@
+            </div>
+            <div class="Portfolio-content">
+                <div class="Portfolio-content-top">
+                    <p>Equity Balance</p>
+                    <div class="canvas-div">
+                        <canvas id="canvas"></canvas>
+                    </div>
+                    <div class="product-div">
+                        @*  *@
+                    </div>
+                </div>
+                <div class="Portfolio-content-bottom">
+                    <div class="Portfolio-content-bottom-top">
+                        <p><span>Account</span><span>Equity Balance</span></p>
+                    </div>
+                    <div class="Portfolio-content-bottom-content">
+                        @**@
+                    </div>
+                    <div class="Portfolio-content-bottom-tt">
+                        <p>@*<span>Total</span><span>content</span>*@</p>
+                        <p><a href="#" id="Disclaimer">Disclaimer</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="show-Disclaimer" id="show-Disclaimer">
+                @*id="hide-Disclaimer"*@
+                <div class="Disclaimer-content">
+                </div>
+                <div class="Disclaimer-bottom" id="hide-Disclaimer">
+                    I've already seen it
+                </div>
+            </div>
+            <div id="Portfolio-Detail" style="display:none;">
+                <div class="navbar Portfolio colorHieght">
+                    <div class="navbar-inner">
+                        <div class="left">
+                            <a href="#" data-panel="left" id="">
+                                <i class="icon icon-exit" id="hide-Portfolio-Detail"></i>
+                            </a>
+                        </div>
+                        <div class="Portfolio-title">
+                            <div id="Portfolio-title-Text">
+                                <a href="#">content</a>
+                                <div>Watchlist</div>
+                                <span></span>
+                            </div>
+                            <div id="Portfolio-drop-down" style="display:none;">
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="Portfolio-Detail-content-top">
+                    <a href="#AccountNo-Detail" class="tab-link active">Account Detail</a>
+                    <a href="#Position-s" class="tab-link">Positions</a>
+                </div>
+                <div class="tabs-animated-wrap">
+                    <div class="tabs" style="transform: translate3d(0%, 0px, 0px);">
+                        <div id="AccountNo-Detail" class="tab active">
+                            <div class="pages">
+                                <div class="page">
+                                    <div class="PortfolioDetail-title-top">
+                                        <div class="PortfolioDetail-top" id="PortfolioDetail-top">
+                                            <ul>
+                                                <li>Describe</li>
+                                                <li>SGDBase</li>
+                                                <li>SGD</li>
+                                            </ul>
+                                        </div>
+                                        <div class="PortfolioDetail-content-content">
+                                            <div id="AccountNo-Detail-content-details">
+
+                                            </div>
+                                        </div>
+                                        <div class="Portfolio-content-bottom-tt AccountNo-Detail" id="AccountNo-Detail-bottom">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Position-s" class="tab">
+                            <div class="pages">
+                                <div class="page">
+                                    <div class="Contract-information-name PortfolioDetail-content">
+                                        <div class="PortfolioDetail-Historicaldate">
+
+                                        </div>
+                                        <div class="information-name-left PositionS-left">
+                                            <ul id="PositionS-contract-name">
+                                                @* #OrderHistory-contract-name 的高度按实际数据添加的*@
+                                            </ul>
+                                        </div>
+                                        <div class="information-name-top PortfolioDetail-top">
+                                            <div class="information-name-top_div">
+                                                <ul class="top_div-name">
+                                                    <li>Name</li>
+                                                    <li>Potential losses</li>
+                                                    <li>Quantity</li>
+                                                    <li>Market value</li>
+                                                    <li>Average cost price</li>
+                                                    <li>Close price</li>
+                                                    <li>Trade currency</li>
+                                                    <li>Suspended quantity</li>
+                                                    <li>Total cost</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="information-name-content PositionS-content-content">
+                                            <div id="PositionS-content-details">
+                                                @* #OrderHistory-content-details *@
+                                            </div>
+                                        </div>
+                                        <div class="Portfolio-content-bottom-tt PositionS" id="PositionS-bottom">
+                                            @*<p><span>Total</span><span>content</span></p>
+                                                <p>Disclaimer</p>*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tabPosition" class="view tab view-position">
+            <div class="navbar colorHieght">
+                <div class="navbar-inner">
+                    <div class="left">
+                        <a href="#" data-panel="left" class="link open-panel Menus-Black icon-only" id="">
+                            <i class="icon icon-bars"></i>
+                        </a>
+                    </div>
+                    <div class="Position-top-title" id="Position-top-title">
+                        @* title name *@
+                    </div>
+                </div>
+            </div>
+            <div class="pages tabs navbar-fixed toolbar-fixed">
+                <div class="Position-content">
+                    <div class="Position-top">
+                        <ul>
+                            <li>Name</li>
+                            <li>Amount Due</li>
+                        </ul>
+                    </div>
+                    <div class="Position-content-content">
+                        @*<div class="Position-content-select">
+                                <div class="Position-content-select-top">
+                                     select text and
+                                </div>
+                                <div class="Position-content-select-bottom">
+                                     content
+                                </div>
+                            </div>
+                            <div class="Position-select-box"></div>*@
+                    </div>
+                    <div class="Position-bottom" id="Position-bottom">
+                    </div>
+                </div>
+            </div>
+            <div class="Modular-Detail" style="display:none;">
+                <div class="OrderStatus-Detail-top">
+                    <div class="navbar colorHieght clear-shadow OutstandingPositions-top">
+                        <div class="navbar-inner">
+                            <div class="left left-exit">
+                                <a href="#" class="link  icon-only Modular-Detail-exit">
+                                    <i class="icon icon-exit"></i>
+                                </a>
+                            </div>
+                            <div class="Position-top-title" id="OutstandingPositions-top-title">
+                                @* title name
+                                    <ul>
+                                        <li>
+                                            <a href="#">content</a>
+                                            <div></div>
+                                        </li>
+                                    </ul>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colorHieght clear-shadow">
+                        <div class="Detailtitle-bottom-left">
+                            @* 后续加动态 *@
+                        </div>
+                        <div class="Detailtitle-bottom-right" id="Position-title-bottom">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="OrderStatus-Detail-content OutstandingPositions-Detail-content" id="OutstandingPositions-Detail-content">
+                    <div class="OutstandingPositions-Detail-TOP">
+                        Outstanding Position Detail
+                    </div>
+                    <div class="Detail-content-top">
+                        @**@
+                    </div>
+                </div>
+                @*<div class="OrderStatus-Detail-bottom OutstandingPositions-bottom">
+                        <button id="Trade">Trade</button>
+                    </div>*@
+            </div>
+            <div class="show-Disclaimer" id="Position-show-Disclaimer">
+                @*id="hide-Disclaimer"*@
+                <div class="Disclaimer-content">
+                </div>
+                <div class="Disclaimer-bottom" id="Position-hide-Disclaimer">
+                    I've already seen it
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    @* Trade-form *@
+    <div id="ST-Trade" class="Trade-Top-div">
+        <div class="OrderStatus-Detail-top">
+            <div class="navbar colorHieght clear-shadow">
+                <div class="navbar-inner">
+                    <div class="left left-exit">
+                        <a href="#" class="link  icon-only Trade-exit">
+                            <i class="icon icon-exit"></i>
+                        </a>
+                    </div>
+                    <div class="Detail-top-title" id="ST-Trade-title">
+                        <a href="#">content</a>
+                        <div>s</div>
+                    </div>
+                </div>
+            </div>
+            <div class="colorHieght clear-shadow">
+                <div class="Detailtitle-bottom-left">
+                    @* 后续加动态 *@
+                </div>
+                <div class="Detailtitle-bottom-right" id="ST-Trade-title-bottom">
+
+                </div>
+            </div>
+        </div>
+        <div class="OrderStatus-Detail-content Trade-content-div">
+            <div class="Detail-content-top">
+                <p><span class="clerl-box">Order Type</span></p>
+                <p>
+                    <select id="ST-Ordertype">
+                        <option value="value">text</option>
+                    </select>
+                </p>
+                <p class="TriggerSpan"><span>Trigger Price</span><span>Trigger Based</span></p>
+                <p class="TriggerSpan">
+                    <input type="number" name="TriggerPrice" id="ST-TriggerPrice" value="" autocomplete="off" />
+                    <select id="ST-TriggerBased">
+                        <option value="3">Bid</option>
+                        <option value="1">Ask</option>
+                        <option value="2">Lastdone</option>
+                    </select>
+                </p>
+                <p><span>Limit Price</span><span>Quantity</span></p>
+                <p>
+                    <input type="number" name="LimitedPrice" id="ST-LimitedPrice" value="" autocomplete="off" />
+                    <input type="number" name="Quantity" id="ST-Quantity" value="" autocomplete="off" />
+                </p>
+                <p class="CurrencyLotsize">@*<span>Contract Value</span>*@</p>
+                <p><span>Payment</span><span>Settlement Currency</span></p>
+                <p>
+                    <select id="ST-Payment">
+                        <option value="value">text</option>
+                    </select>
+                    <select id="ST-SettlementCurrency">
+                        <option value="value">text</option>
+                    </select>
+                </p>
+                <p><span class="clerl-box">Trade Password</span></p>
+                <p class="TradePassword">
+                    <input type="password" id="ST-TradePassword" name="TradePassword" value="" autocomplete="off" />
+                </p>
+            </div>
+            <div class="ST-BOX"></div>
+        </div>
+        <div class="OrderStatus-Detail-bottom Trade-bottom-button">
+            <div class="ST-Amount">
+            </div>
+            <button id="ST-Buy" value="1">Buy</button>
+            <button id="ST-Sell" value="2">Sell</button>
+        </div>
+    </div>
+    <div id="CFDTrade">
+        <div id="CFDTrade-Trade-content">
+            <div class="ContractSearch">
+                <span class="icon-exit"></span>
+                <input type="text" name="name" value="" id="CFD-Trade-Search" placeholder="Search by symbol or name" autocomplete="off" />
+                <span class="clear">×</span>
+            </div>
+            <div id="CFD-Search-list">
+                <ul>1</ul>
+            </div>
+        </div>
+    </div>
+    <div id="CFD-Trade" class="Trade-Top-div">
+        <div class="OrderStatus-Detail-top">
+            <div class="navbar colorHieght clear-shadow">
+                <div class="navbar-inner">
+                    <div class="left left-exit">
+                        <a href="#" class="link  icon-only Trade-exit">
+                            <i class="icon icon-exit"></i>
+                        </a>
+                    </div>
+                    <div class="Detail-top-title" id="CFD-Trade-title">
+                        <a href="#">content</a>
+                        <div>s</div>
+                    </div>
+                </div>
+            </div>
+            <div class="colorHieght clear-shadow">
+                <div class="Detailtitle-bottom-left">
+                    @*<h3>1</h3>
+                        <ul>
+                            <li>2</li>
+                            <li>3</li>
+                        </ul>*@
+                </div>
+                <div class="Detailtitle-bottom-right" id="CFD-Trade-title-bottom">
+
+                </div>
+            </div>
+        </div>
+        <div class="OrderStatus-Detail-content CFD-Trade-content">
+            <div class="Detail-content-top">
+                <div class="CFD-Trade-content-Top">
+                    <p><span class="clerl-box">Order Type</span></p>
+                    <p>
+                        <select id="CFD-Ordertype"></select>
+                    </p>
+                </div>
+                @* Limited-Order *@
+                <div id="CFD-Limited-Order">
+                    <p><span>Limit Price</span><span>Quantity</span></p>
+                    <p class="input-input">
+                        <input type="number" name="LimitedPrice" value="" autocomplete="off" />
+                        <input type="number" name="Quantity" value="" autocomplete="off" />
+                    </p>
+                    <p class="CurrencyLotsize">@*<span>Contract Value</span>*@</p>
+                    <p class="Contract-Value">@*<span>Contract Value</span><span>111111</span>*@</p>
+                    <p class="Caution-Money-Require">@*<span>Caution Money Require</span><span>111111</span>*@</p>
+                    <p><span>Validity</span><span>Time</span></p>
+                    <p class="select-input">
+                        <select class="Effectiveness"></select>
+                        <input type="date" name="CFD-Date" value="" autocomplete="off" />
+                    </p>
+                    <p><span class="clerl-box">Trade Password</span><span></span></p>
+                    <p class="TradePassword">
+                        <input type="password" name="TradePassword" value="" autocomplete="off" />
+                    </p>
+                </div>
+                @* IF Done order *@
+                <div id="IF-Done-Order">
+                    <p class="select">
+                        <select id="Select-Order-No" style="width:100%;">
+                            <option>Select Order No</option>
+                        </select>
+                    </p>
+                    <p class="SpanRight"><span>Limit Price</span><span>Quantity</span></p>
+                    <p class="input-input">
+                        <input type="number" class="Limit-Price" name="LimitedPrice" value="" autocomplete="off" />
+                        <input type="number" class="Quantity" name="Quantity" value="" autocomplete="off" />
+                    </p>
+                    <p class="CurrencyLotsize">@*<span>Contract Value</span>*@</p>
+                    <p class="Contract-Value">@*<span>Contract Value</span><span>111111</span>*@</p>
+                    <p class="Caution-Money-Require">@*<span>Caution Money Require</span><span>111111</span>*@</p>
+                    <p class="SpanRight"><span>Validity</span><span>Time</span></p>
+                    <p class="select-input">
+                        <select class="Effectiveness"></select>
+                        <input type="date" name="CFD-Date" value="" autocomplete="off" />
+                    </p>
+                    <p><span class="clerl-box">Trade Password</span><span></span></p>
+                    <p class="TradePassword">
+                        <input type="password" name="TradePassword" value="" autocomplete="off" />
+                    </p>
+                </div>
+                @* Stop-Limited-Order *@
+                <div id="CFD-Stop-Limited-Order">
+                    <p><span>Stop Price</span><span>Stop price trigger</span></p>
+                    <p class="input-select">
+                        <input type="number" name="StopPrice" value="" autocomplete="off" />
+                        <select>
+                            <option value="value">text</option>
+                        </select>
+                    </p>
+                    <p><span>Limit Price</span><span>Quantity</span></p>
+                    <p class="input-input">
+                        <input type="number" name="LimitedPrice" value="" autocomplete="off" />
+                        <input type="number" name="Quantity" value="" autocomplete="off" />
+                    </p>
+                    <p class="CurrencyLotsize">@*<span>Contract Value</span>*@</p>
+                    <p class="Contract-Value">@*<span>Contract Value</span><span>111111</span>*@</p>
+                    <p class="Caution-Money-Require">@*<span>Caution Money Require</span><span>111111</span>*@</p>
+                    <p><span>Validity</span><span>Time</span></p>
+                    <p class="select-input">
+                        <select class="Effectiveness"></select>
+                        <input type="date" name="CFD-Date" value="" autocomplete="off" />
+                    </p>
+                    <p><span class="clerl-box">Trade Password</span><span></span></p>
+                    <p class="TradePassword">
+                        <input type="password" name="TradePassword" value="" />
+                    </p>
+                </div>
+                @* Trailling-Stop-Order *@
+                <div id="CFD-Trailling-Stop-Order">
+                    <p><span>Trailing Step %</span><span>Stop price trigger</span></p>
+                    <p class="input-select">
+                        <input type="number" name="Tracestep" value="" autocomplete="off" />
+                        <select id="TrailingPrice">
+                            <option value="value">text</option>
+                        </select>
+                    </p>
+                    <p class="trailingStep"><span>Ind. Stop:</span><span>content1</span></p>
+                    <p><span>Limit Spread</span><span>Quantity</span></p>
+                    <p class="input-input">
+                        <input type="number" name="LimitedPrice" value="" autocomplete="off" />
+                        <input type="number" name="Quantity" value="" autocomplete="off" />
+                    </p>
+                    <p class="limitSpread"><span></span><span>content1</span></p>
+                    <p class="Contract-Value">@*<span>Contract Value</span><span>111111</span>*@</p>
+                    <p class="Caution-Money-Require">@*<span>Caution Money Require</span><span>111111</span>*@</p>
+                    <p><span>Validity</span><span>Time</span></p>
+                    <p class="select-input">
+                        <select class="Effectiveness">
+                            <option value="value">text</option>
+                        </select>
+                        <input type="date" name="CFD-Date" value="" autocomplete="off" />
+                    </p>
+                    <p><span class="clerl-box">Trade Password</span><span></span></p>
+                    <p class="TradePassword">
+                        <input type="password" name="TradePassword" value="" autocomplete="off" />
+                    </p>
+                </div>
+                @* OCO-Order *@
+                <div id="CFD-OCO-Order">
+                    <hr /><h6>OCO Limit Price</h6>
+                    <p><span>Limit Price</span><span>Quantity</span></p>
+                    <p class="input-input">
+                        <input type="number" name="LimitedPrice" value="" autocomplete="off" />
+                        <input type="number" name="Quantity" value="" autocomplete="off" />
+                    </p>
+                    <p class="CurrencyLotsize">@*<span>Contract Value</span>*@</p>
+                    <p class="Contract-Value">@*<span>Contract Value</span><span>111111</span>*@</p>
+                    <p class="Caution-Money-Require">@*<span>Caution Money Require</span><span>111111</span>*@</p>
+                    <hr /><h6>OCO Stop Limit Price</h6>
+                    <p><span>Stop Price</span><span style="width: 50%;float: right;">Stop price trigger</span></p>
+                    <p class="input-select">
+                        <input type="number" name="StopPrice" value="" autocomplete="off" />
+                        <select>
+                            <option value="value">text</option>
+                        </select>
+                    </p>
+                    <p><span>Limit Price</span><span style="width: 50%;float: right;">Quantity</span></p>
+                    <p class="input-input1">
+                        <input type="number" name="LimitedPrice" value="" autocomplete="off" />
+                        <input type="number" name="Quantity" value="" autocomplete="off" />
+                    </p>
+                    <p class="CurrencyLotsize">@*<span>Contract Value</span>*@</p>
+                    <p class="Contract-Value">@*<span>Contract Value</span><span>111111</span>*@</p>
+                    <p class="Caution-Money-Require">@*<span>Caution Money Require</span><span>111111</span>*@</p>
+                    <p><span>Validity</span><span>Time</span></p>
+                    <p class="select-input">
+                        <select class="Effectiveness">
+                            <option value="value">text</option>
+                        </select>
+                        <input type="date" name="CFD-Date" value="" autocomplete="off" />
+                    </p>
+                    <p><span class="clerl-box">Trade Password</span><span></span></p>
+                    <p class="TradePassword">
+                        <input type="password" name="TradePassword" value="" autocomplete="off" />
+                    </p>
+                </div>
+                @* Contingency Order *@
+                <div id="CFD-Contingency-Order">
+                    <p><span>Contrtact</span><span></span></p>
+                    <p class="select" >
+                        <input type="text" style="width: 100%;" name="Price" id="CFD-Contingency-Contrtact" byvalue="" value="" readonly autocomplete="off" />
+                    </p>
+                    <p><span>Condition</span><span>Price</span></p>
+                    <p class="select-input">
+                        <select>
+                            <option value="value">text</option>
+                        </select>
+                        <input type="number" name="Price" value="" autocomplete="off" />
+                    </p>
+                    <p><span>Limit Price</span><span>Quantity</span></p>
+                    <p class="input-input">
+                        <input type="number" name="LimitedPrice" value="" autocomplete="off" />
+                        <input type="number" name="Quantity" value="" autocomplete="off" />
+                    </p>
+                    <p class="CurrencyLotsize">@*<span>Contract Value</span>*@</p>
+                    <p class="Contract-Value"> @*<span>Contract Value</span> <span>111111</span>*@</p>
+                    <p class="Caution-Money-Require">@*<span>Caution Money Require</span><span>111111</span>*@</p>
+                    <p><span>Validity</span><span>Time</span></p>
+                    <p class="select-input1">
+                        <select class="Effectiveness">
+                            <option value="value">text</option>
+                        </select>
+                        <input type="date" name="CFD-Date" value="" autocomplete="off" />
+                    </p>
+                    <p><span class="clerl-box">Trade Password</span><span></span></p>
+                    <p class="TradePassword">
+                        <input type="password" id="CFD-TradePassword" name="TradePassword" value="" autocomplete="off" />
+                    </p>
+                </div>
+
+            </div>
+            <div class="CFD-BOX"></div>
+        </div>
+        <div class="OrderStatus-Detail-bottom Trade-bottom-button">
+            <div class="CFD-Amount">
+            </div>
+            <button id="CFD-Buy" value="1">Buy</button>
+            <button id="CFD-Sell" value="2">Sell</button>
+        </div>
+    </div>
+    <div id="UT-Trade" class="Trade-Top-div1">
+        <div class="OrderStatus-Detail-top">
+            <div class="navbar colorHieght clear-shadow">
+                <div class="navbar-inner">
+                    <div class="left left-exit">
+                        <a href="#" class="link  icon-only Trade-exit">
+                            <i class="icon icon-exit"></i>
+                        </a>
+                    </div>
+                    <div class="Detail-top-title" id="UT-Trade-title">
+                        <a href="#">content</a>
+                        <div>s</div>
+                    </div>
+                </div>
+            </div>
+            <div class="colorHieght clear-shadow">
+                <div class="Detailtitle-bottom-left">
+                    @* 后续加动态 *@
+                </div>
+                <div class="Detailtitle-bottom-right" id="UT-Trade-title-bottom">
+
+                </div>
+            </div>
+        </div>
+        <div class="OrderStatus-Detail-content UT-Trade-content">
+
+            <p style="color:#333;">Action</p>
+           @* change class *@
+            <div class="UT_trading_manner">
+                <ul>
+                    <li value="Buy">Buy</li>
+                    <li value="Sell" disabled="disabled">Sell</li>
+                    <li value="Switch" disabled="disabled">Switch</li>
+                </ul>
+            </div>
+
+            @* Buy *@
+            <div id="UT_Trade_content_Buy">
+                <p><span>Investment Amount</span></p>
+                <p class="input"><input type="number" name="Amount" value="" autocomplete="off" /></p>
+                <p class="MIA"></p>
+                <p class="MAA"></p>
+                <p class="SE"></p>
+                <p><span>Funding Sources</span><span>Payment Currency</span></p>
+                <p class="select-select">
+                    <select>
+                        <option value="value">text</option>
+                    </select>
+                    <select>
+                        <option value="value">text</option>
+                    </select>
+                </p>
+                <p><span>Trade Password</span></p>
+                <p class="TradePassword">
+                    <input type="password" name="TradePassword" autocomplete="off" />
+                </p>
+                @* 提醒文字 and pdf *@
+                <div class="FonetSize_Info">
+                    Note:This application for units in the fund is deemed to accompany the fund prospectus below. You should read the prospectus before completing the application.
+                </div>
+                <div class="PDF_Info"></div>
+            </div>
+
+            @* Sell *@
+            <div id="UT_Trade_content_Sell"style="display:none">
+                <p><span>Investment Amount</span></p>
+                <p class="input"><input type="number" name="Amount" value="" autocomplete="off" /></p>
+                <p><span>Sell The Reference</span></p>
+                <div class="The_Reference">
+                    <select>
+                    </select>
+                </div>
+                <p><span>Funding Sources</span><span>Payment Currency</span></p>
+                <p class="select-select">
+                    <select>
+                        <option value="value">text</option>
+                    </select>
+                    <select>
+                        <option value="value">text</option>
+                    </select>
+                </p>
+                <p><span>Trade Password</span></p>
+                <p class="TradePassword">
+                    <input type="password" name="TradePassword" autocomplete="off" />
+                </p>
+            </div>
+
+            @* Switch *@
+            <div id="UT_Trade_content_Switch"style="display:none">
+                <p>SWITCH-OUT/SELL</p>
+                <div class="Switch_title_div">
+                    <div class="Detail-top-title Switch_title">
+                        <a href="#">content</a>
+                        <div>s</div>
+                    </div>
+                </div>
+                <p><span>Investment Amount</span></p>
+                <p class="input"><input type="number" name="Amount" value="" autocomplete="off" /></p>
+                <p><span>Switch The Reference</span></p>
+                <div class="The_Reference">
+                    <select></select>
+                </div>
+                <p><span>Funding Sources</span><span>Payment Currency</span></p>
+                <p class="select-select">
+                    <select>
+                        <option value="value">text</option>
+                    </select>
+                    <select>
+                        <option value="value">text</option>
+                    </select>
+                </p>
+                <p>SWITCH-IN-BUY</p>
+                <p><span>Fund</span></p>
+                <div class="Search">
+                    <div class="">@* Detail-top-title Switch_title *@
+                        @*<a href="#">content</a>
+                        <div>s</div>*@
+                        <input type="text" name="Amount" value="" placeholder="Click Proceed Search Fund Name" autocomplete="off" />
+                    </div>
+                </div>
+                <p><span>Trade Password</span></p>
+                <p class="TradePassword">
+                    <input type="password" name="TradePassword" autocomplete="off" />
+                </p>
+            </div>
+
+            <div class="UT-BOX"></div>
+        </div>
+        <div class="OrderStatus-Detail-bottom Trade-bottom-button">
+            <div class="UT-Amount">
+            </div>
+            @*<button id="UT-Buy" value="Buy">Buy</button>
+            <button id="UT-Buy" disabled="disabled" value="Sell">Sell</button>
+            <button id="UT-Buy" disabled="disabled" value="Switch">Switch</button>*@
+            <div class="UT_Trade_submit">Submit</div>
+        </div>
+    </div>
+    <div id="UTTrade">
+        <div id="UTTrade-Trade-content">
+            <div class="ContractSearch">
+                <span class="icon-exit"></span>
+                <input type="text" name="name" value="" id="UT-Trade-Search" placeholder="Search by symbol or name" autocomplete="off" />
+                <span class="clear">×</span>
+            </div>
+            <div id="UT-Search-list">
+                <ul>1</ul>
+            </div>
+        </div>
+    </div>
+    <div id="trade_UT_INfo" class="trade_Info">
+        <div class="OrderStatus-Detail-top">
+            <div class="navbar colorHieght clear-shadow">
+                <div class="navbar-inner">
+                    <div class="left left-exit">
+                        <a href="#" class="link  icon-only trade_Info_exit">
+                            <i class="icon icon-exit"></i>
+                        </a>
+                    </div>
+                    <div class="Detail-top-title" id="trade_UT_INfo_title">
+                        <a href="#">content</a>
+                        <div>s</div>
+                    </div>
+                </div>
+            </div>
+            <div class="colorHieght clear-shadow">
+                <div class="Detailtitle-bottom-left">
+                    @* 后续加动态 *@
+                </div>
+                <div class="Detailtitle-bottom-right">
+
+                </div>
+            </div>
+        </div>
+        <div class="OrderStatus-Detail-content" id="UT_trade_Info">
+           @* UT trade  Info *@
+            <div class="UT_trade_Info_top">
+                <div>
+                    <a href="#General_Infos" class="tab-link active">General Info</a>
+                    <a href="#Performance" class="tab-link">Performance</a>
+                    <a href="#Documents" class="tab-link">Documents</a>
+                    <a href="#Regular_Savings_Plan" class="tab-link">Regular Savings Plan</a>
+                    <a href="#Fund_Manager_Info" class="tab-link">Fund Manager Info</a>
+                </div>
+            </div>
+            <div class="tabs" style="margin-top: 3rem;">
+                <div id="General_Infos" class="tab active">
+                    <div class="General_Info_content">
+                        <div class="Low_High">
+                            <ul>
+                                <li>4 week High</li>
+                                <li>-</li>
+                            </ul>
+
+                            <ul>
+                                <li>4 week low</li>
+                                <li>-</li>
+                            </ul>
+                        </div>
+                        <div id="General_Info">
+                            <div class="accordion-item accordion-item-expanded">
+                                <div class="accordion-item-toggle before">General Info<span></span></div>
+                                <div class="accordion-item-content padding_content">
+                                    <ol>
+                                        <li>
+                                            <ol>
+                                                <li>Fund Currency</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li style="width:52%;">PSPL Risk Classification</li>
+                                                <li style="width:47%;">-</li>
+                                            </ol>
+                                        </li>
+
+
+                                        <li>
+                                            <ol>
+                                                <li>CPF Risk Classification</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li>Asset Class</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li>Sector</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li>Launch Date</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li>Launch Price</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li>Geography</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li style="width:37%;">Benchmark Index</li>
+                                                <li style="width: 63%;font-size: 10px;line-height: 19px;">-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li>Price Type</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li>Price Made Known On</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li>Dealing Cut Off Time</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <ol>
+                                                <li>Fund Source</li>
+                                                <li>-</li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div> 
+                        <div id="Investment_Objective">
+                            <div class="accordion-item accordion-item-expanded">
+                                <div class="accordion-item-toggle before">Investment Objective<span></span></div>
+                                <div class="accordion-item-content padding_content">
+                                    <p>
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Investment_Amount">
+                            <div class="accordion-item accordion-item-expanded">
+                                <div class="accordion-item-toggle before">Investment Amount<span></span></div>
+                                <div class="accordion-item-content padding_content">
+                                    <div class="scroll_Left" id="Investment_Amount_Left">
+                                        <ul>
+                                            <li></li>
+                                            <li>-</li>
+                                        </ul>
+                                    </div>
+                                    <div class="scroll_Content" id="Investment_Amount_Content">
+                                        <ul>
+                                            <li>Cash</li>
+                                            <li>SRS-IA</li>
+                                            <li>CPEOA-IA</li>
+                                            <li>CPESA-IA</li>
+                                        </ul>
+                                        <ul>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Relevant_Charges">
+                            <div class="accordion-item accordion-item-expanded">
+                                <div class="accordion-item-toggle before">Relevant Charges<span></span></div>
+                                <div class="accordion-item-content padding_content">
+                                    <div class="scroll_Left" id="Relevant_Charges_Left">
+                                        <ul>
+                                            <li></li>
+                                            <li>-</li>
+                                        </ul>
+                                    </div>
+                                    <div class="scroll_Content" id="Relevant_Charges_Content">
+                                        <ul>
+                                            <li>Cash</li>
+                                            <li>SRS-IA</li>
+                                            <li>CPEOA-IA</li>
+                                            <li>CPESA-IA</li>
+                                        </ul>
+                                        <ul>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Fund_Awards">
+                            <div class="accordion-item accordion-item-expanded">
+                                <div class="accordion-item-toggle before">Fund Awards<span></span></div>
+                                <div class="accordion-item-content padding_content">
+                                    <div class="scroll_Left" id="Fund_Awards_Left">
+                                        <ul>
+                                            <li></li>
+                                            <li>-</li>
+                                        </ul>
+                                    </div>
+                                    <div class="scroll_Content" id="Fund_Awards_Content">
+                                        <ul>
+                                            <li>Cash</li>
+                                            <li>SRS-IA</li>
+                                            <li>CPEOA-IA</li>
+                                            <li>CPESA-IA</li>
+                                        </ul>
+                                        <ul>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                        </ul>
+                                    </div>
+                                    <div></div>
+                                    <div class="scroll_Left" id="Fund_Awards_Left1">
+                                        <ul>
+                                            <li></li>
+                                            <li>-</li>
+                                        </ul>
+                                    </div>
+                                    <div class="scroll_Content" id="Fund_Awards_Content1">
+                                        <ul>
+                                            <li>Cash</li>
+                                            <li>SRS-IA</li>
+                                            <li>CPEOA-IA</li>
+                                            <li>CPESA-IA</li>
+                                        </ul>
+                                        <ul>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Performance" class="tab">
+                    <div class="Performance_content">
+                        <h3 class="title padding_content">Performance Return</h3>
+                        <div id="Performance_chart"></div>
+                        <div class="Performance_content_table padding_content" id="Performance_table">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th></th>
+                                        <td class="table_Top_name">1</td>
+                                        <td><button class="Compare">Compare</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h3 class="title padding_content">Annualized Return</h3>
+                        <div id="Performance_chart1"></div>
+                        <div class="Performance_content_table padding_content" id="Performance_table1">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th></th>
+                                        <td class="table_Top_name">1</td>
+                                        <td><button class="Compare">Compare</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="Documents" class="tab">
+                    <div class="Documents_content padding_content">
+                        <div class="Documents_content_chunk">
+                            <h4>ss</h4>
+                            <p>2</p>
+                        </div>
+                        <div class="Documents_content_chunk">
+                            <h4>ss</h4>
+                            <p>2</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="Regular_Savings_Plan" class="tab">
+                    <div class="Regular_Savings_Plan_content padding_content">
+                        <p>Learn more about Regular Savings Plan</p>
+                        <h4 class="Regular_Savings_Plan_title">Monthly Regular Savings Plan Charges</h4>
+                        <div class="scroll_Left" id="Regular_Savings_Plan_Left">
+                            <ul>
+                                <li></li>
+                                <li>1</li>
+                            </ul>
+                        </div>
+                        <div class="scroll_Content" id="Regular_Savings_Plan_Content">
+                            <ul>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                            </ul>
+                            <ul>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                            </ul>
+                        </div>
+                        <h4 class="Regular_Savings_Plan_title">Quarterly Regular Savings Plan Charges</h4>
+                        <div class="scroll_Left" id="Regular_Savings_Plan_Left1">
+                            <ul>
+                                <li></li>
+                                <li>1</li>
+                            </ul>
+                        </div>
+                        <div class="scroll_Content" id="Regular_Savings_Plan_Content1">
+                            <ul>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                            </ul>
+                            <ul>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                            </ul>
+                        </div>
+                        <div class="clear_box"></div>
+                    </div>
+                </div>
+                <div id="Fund_Manager_Info" class="tab">
+                    <div class="Fund_Manager_Info_content padding_content">
+                        <h4>Fund Manager Information</h4>
+                        <img src="http://internetfileserver.phillip.com.sg/Poems/UnitTrust/Product%20Providers_Logo/UOBAM.gif" alt="Alternate Text" />
+                        <p>1111</p>
+                        <p><a href="javascript:;">1111</a></p>
+                        <h3>About Fund Manager</h3>
+                        <p>1111</p>
+                        <h3>11111</h3>
+                    </div>
+                </div>
+                <div class="UT-BOX"></div>
+            </div>
+            <div class="OrderStatus-Detail-bottom Info_button">
+                <div id="UT_trade">Buy Now</div>
+            </div>
+        </div>
+    </div>
+    <div id="FTFXFXMN-Trade" class="Trade-Top-div">
+        <div class="OrderStatus-Detail-top">
+            <div class="navbar colorHieght clear-shadow">
+                <div class="navbar-inner">
+                    <div class="left left-exit">
+                        <a href="#" class="link  icon-only Trade-exit">
+                            <i class="icon icon-exit"></i>
+                        </a>
+                    </div>
+                    <div class="Detail-top-title" id="FTFXFXMN-Trade-title">
+                        <a href="#">content</a>
+                        <div>s</div>
+                    </div>
+                </div>
+            </div>
+            <div class="colorHieght clear-shadow">
+                <div class="Detailtitle-bottom-left">
+                    @* 后续加动态 *@
+                </div>
+                <div class="Detailtitle-bottom-right" id="FTFXFXMN-Trade-title-bottom">
+
+                </div>
+            </div>
+        </div>
+        <div class="OrderStatus-Detail-content FTFXFXMN-Trade-content">
+            <div class="Detail-content-top">
+                <div class="CFD-Trade-content-Top">
+                    <p><span class="clerl-box">Order Type</span></p>
+                    <p>
+                        <select id="FTFXFXMN-Ordertype"></select>
+                    </p>
+                </div>
+                @* Limited-Order *@
+                <div id="FTFXFXMN-Limited-Order">
+                    <p class="stopLimitPrice"><span>Stop Limit Price</span></p>
+                    <p class="stopLimitPrice">
+                        <input type="number" name="StopPrice" value="" autocomplete="off" />
+                    </p>
+                    <p class="ocoPrice"><span>OCO Price</span></p>
+                    <p class="ocoPrice">
+                        <input type="number" name="ocoPrice" value="" autocomplete="off" />
+                    </p>
+                    <p><span>Price</span><span>Quantity</span></p>
+                    <p class="input-input">
+                        <input type="number" name="LimitedPrice" value="" autocomplete="off" />
+                        <input type="number" name="Quantity" value="" autocomplete="off" />
+                    </p>
+                    <p class="Contract-Value">@*<span>Contract Value</span><span>111111</span><span></span><span></span>*@</p>
+                    <p class="Caution-Money-Require">@*<span>Caution Money Require</span><span>111111</span><span></span><span></span>*@</p>
+                    <p style="clear:both"><span>Expiry</span></p>
+                    <p class="select-input">
+                        <select class="Effectiveness"></select>
+                    </p>
+                    <p><span class="clerl-box">Trade Password</span><span></span></p>
+                    <p class="TradePassword">
+                        <input type="password" name="TradePassword" value="" autocomplete="off" />
+                    </p>
+                </div>
+
+            </div>
+            <div class="FTFXFXMN-BOX"></div>
+        </div>
+        <div class="OrderStatus-Detail-bottom Trade-bottom-button">
+            <div class="FTFXFXMN-Amount">
+            </div>
+            <button id="FTFXFXMN-Buy" value="1">Buy</button>
+            <button id="FTFXFXMN-Sell" value="0">Sell</button>
+        </div>
+    </div>
+
+
+
+
+    <div id="dialog2" style="display: none;">
+        <div class="dialog-content">
+            <div class="dialog_hd"></div>
+            <div class="weui_dialog_bd"></div>
+            <div class="weui_btn_dialog">
+                <a href="javascript:;">OK</a>
+            </div>
+        </div>
+    </div>
+    <div id="dialog2x" style="display: none;">
+        <div class="dialog-content">
+            <div class="dialog_hd"></div>
+            <div class="weui_dialog_bd"></div>
+            <div class="weui_btn_Two">
+                <a href="javascript:;" class="weui_btn_Two_ok">Submit</a>
+                <a href="javascript:;" class="weui_btn_Two_cancel">Cancel</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="twoFA_content">
+        <div class="dialog-content twoFA_content">
+            <div class="dialog_hd">
+                <div class="twoFA_hd_top">
+                    2FA Login
+                </div>
+                <div class="twoFA_hd_bom">
+                    <ol>
+                        <li>Access without 2FA</li>
+                        <li>2FA Signup</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="dialog_tt">
+                <p>You have not enabled the optional 2FA for this account. To proceed without 2FA, please acknowledge the 2FA Risk Awareness Statement.</p>
+                <p><input type="checkbox"/>I have read and acknowledged the <span class="RAS">Risk Awareness Statement(RAS)</span></p>
+            </div>
+            <div class="weui_btn_Two" style="border-top:0">
+                <a href="javascript:;"  disabled="disabled" id="twoFA_proceed">Proceed</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading" style="display:block;background:#fff;">
+        <div class="loading-content">
+            <!-- :) -->
+            <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+            <p class="loading-content-p"></p>
+        </div>
+
+    </div>
+
+
+
+
+    <script src="~/Content/Public/javascript/echarts.js?121111"></script>
+</body>
+</html>

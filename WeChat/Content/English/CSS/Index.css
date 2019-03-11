@@ -1,0 +1,1994 @@
+﻿* {
+    padding:0;
+    margin:0;
+    list-style:none;
+}
+body {
+    background: #f2f2f2;
+    -webkit-text-size-adjust:100% !important;
+}
+a{
+    color:#333;
+}
+li {
+    border:0;
+}
+p {
+    margin:0;
+}
+.pages {
+    background:none;
+}
+.page {
+    background:#f2f2f2;
+}
+.navbar:after {
+    content:"";
+    background:#013366;
+}
+.navbar .left {
+    margin-right: 0px;
+}
+.navbar .right {
+    margin-left: 0px;
+    color: #D47510;
+    padding-right: 4px;
+}
+.colorHieght {
+    background: #013366;
+    width: 100%;
+    height: 60px;
+    z-index: 11111;
+    box-shadow: 0px 2px 4px 0px #010d1a;
+}
+.zIndex {
+    z-index: 11111;
+}
+.menus-title-img {
+    background: #103960;
+    height: 60px;
+}
+.list-block {
+    font-size:18px;
+    margin:0;
+}
+.list-block ul {
+    padding:0;
+    background: none;
+}
+.list-block .item-content {
+    padding-left: 6px;
+    width:100%;
+    position:relative;
+    border-top: 2px solid rgba(204, 204, 204, 0.62);
+}
+.item-content .item-media {
+    width: 30px;
+    padding: 0;
+}
+.item-content a{
+    width: 100%;
+    min-height: 40px;
+    line-height: 40px;
+    padding-left: 16px;
+}
+
+/*icon*/
+.icon-Watchlist {
+    width: 30px;
+    height: 30px;
+    background: url(../../Public/img/watchlist.png) no-repeat;
+    background-position: center;
+}
+.icon-Trade {
+    width: 30px;
+    height: 30px;
+    background: url(../../Public/img/trade.png) no-repeat;
+    background-position: center;
+}
+.icon-OrderStatus {
+    width: 30px;
+    height: 30px;
+    background: url(../../Public/img/order-status.png) no-repeat;
+    background-position: center;
+}
+.icon-Portfolio {
+    width: 30px;
+    height: 30px;
+    background: url(../../Public/img/portfolio.png) no-repeat;
+    background-position: center;
+}
+.icon-OutsPositions {
+    width: 30px;
+    height: 30px;
+    background: url(../../Public/img/outstanding-position.png) no-repeat;
+    background-position: center;
+}
+.icon-TransHistory {
+    width: 30px;
+    height: 30px;
+    background: url(../../Public/img/) no-repeat;
+    background-position: center;
+}
+.icon-Setting {
+    width: 30px;
+    height: 30px;
+    background: url(../../Public/img/settings.png) no-repeat;
+    background-position: center;
+}
+.icon-Logout {
+    width: 30px;
+    height: 30px;
+    background: url(../../Public/img/logout.png) no-repeat;
+    background-position: center;
+}
+.icon-exit {
+    width: 30px;
+    height: 30px;
+    background: url(../../Public/img/exit.png) no-repeat;
+    background-position: center;
+}
+
+#menus-black-div {
+    width: 262px;
+    box-shadow: 400px -1px 0px 400px rgba(0, 0, 0, 0.51);
+    background-color: #F7F9F9;
+    z-index: 11111;
+}
+.menus-black-div div{
+    background-color:white;width: 260px;
+}
+/*Watchlist*/
+.Watchlist-title {
+    text-align: center;
+}
+#Watchlist-title-Text {
+    padding-right: 2rem;
+    font-size: 20px;
+    color: #f2f2f2;
+    letter-spacing: 2px;
+    max-width: 160px;
+    position: relative;
+    height: 34px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#Watchlist-title-Text span {
+    position: absolute;
+    display: block;
+    top: 42%;
+    right: 6%;
+    border-left: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #D47510;
+}
+#Subrefresh {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: url(../../Public/img/F5.png);
+    background-size: 100% 100%;
+    right: 14%;
+}
+#tabWatchlist {
+    position: relative;
+    overflow: auto;
+}
+
+#Watchlist-drop-down {
+    position: absolute;
+    width: 12rem;
+    top: 46px;
+    left: 52%;
+    z-index: 111;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.63);
+}
+#Watchlist-drop-down li {    
+    color: #333;
+    font-size: 16px;
+    padding: 4px 0.5rem 4px 0.5rem;
+    text-align: left;
+    background:#eee;
+    border-top: 1px solid #D6D6D6;
+}
+#Watchlist-drop-down li:first-child{
+    background: #003366;
+    color: rgba(0, 0, 0, 0.53);
+    padding: 2px 3rem 2px 3rem;
+    border-top:0;
+}
+#Watchlist-drop-down li:first-child::before{
+    position: absolute;
+    top: -9px;
+    border-bottom: 5px solid #003366;
+    left: 45%;
+    content: "";
+    border-top: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+#Watchlist-content {
+    width: 100%;
+    height: 100%;
+    margin-top: 60px;
+}
+.ContractSearch {
+    width: 100%;
+    padding: 0.6rem 0px 0.7rem 0px;
+    background: #013366;
+    text-indent: 0.4rem;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 1111;
+}
+#Watchlist-search-list {
+    width: 96%;
+    position: fixed;
+    background: #f2f2f2;
+    top: 108px;
+    left: 6px;
+    display:none;
+    box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.64);
+}
+#Watchlist-search-list ul li {
+    width: 100%;
+    height: 46px;
+    overflow: hidden;
+    border-bottom: 1px solid #E2E2E2;
+}
+#Watchlist-search-list p{
+    padding: 6px 0px 6px 0px;
+    text-align: center;
+}
+#Watchlist-search-list li a{
+    display: block;
+    width: 34px;
+    height: 30px;
+    padding: 4px;
+    float: left;
+    margin: 4px;
+    font-size: 14px;
+    background: #8d8d02;
+    color: #f2f2f2;
+    text-indent: 0;
+    text-align: center;
+    overflow: hidden;
+    word-break: break-word;
+}
+#Watchlist-search-list li div{
+    float: right;
+    width: 83%;
+    height: 22px;
+    text-indent: 0;
+    line-height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#Watchlist-search-list li div:last-child {
+    font-size:12px;
+}
+#Watchlist-content .clear {
+    display: none;
+    position: absolute;
+    top: 36%;
+    right: 30%;
+    border-radius: 10px;
+    background: orange;
+    width: 20px;
+    color: #f2f2f2;
+    height: 20px;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    text-indent: 0;
+}
+.Contract-information-name {
+    width: 100%;
+    height: 100%;
+    padding-top: 58px;
+}
+.Contract-information-name .information-name-left {
+    overflow-y: scroll;
+    position: fixed;
+    width: 10rem;
+    height: 100%;
+    left: 0;
+    top: 158px;
+    z-index: 1;
+}
+ .Contract-information-name .information-name-top {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    position: fixed;
+    height: 40px;
+    width: 100%;
+    left: 0rem;
+    padding-left: 10rem;
+    z-index: 111;
+    background: #013366;
+    box-shadow: 0px 0px 10px 0px #001122;
+}
+.information-name-left ul {
+    /*background-color:#F2F2F2;*/
+}
+.information-name-left ul li {
+    line-height: 40px;
+    padding: 0px 0px 0px 0px;
+    border-right: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+    height: 48px;
+    clear:both;
+}
+.information-name-left ul li div {
+    width: 6rem;
+    height: 2.2rem;
+    line-height: 19px;
+    font-size: 14px;
+    overflow: hidden;
+    float: left;
+    margin-top: 6px;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+.information-name-left ul li div::after {
+    content:"";
+}
+.information-name-left ul li a {
+    display: block;
+    width: 34px;
+    height: 30px;
+    padding: 4px;
+    line-height: 12px;
+    float: left;
+    margin: 4px;
+    font-size: 14px;
+    background: #8d8d02;
+    color: #f2f2f2;
+    text-align: center;
+    overflow: hidden;
+    word-break: break-word;
+}
+.information-name-top_div {
+    width: 1138px;
+    height: 40px;
+}
+.information-name-top_div ul {
+    height: 40px;
+    clear: both;
+}
+.information-name-top_div ul li{
+    width: 80px;
+    float: left;
+    line-height: 40px;
+    text-align: center;
+    font-size: 12px;
+    color: #f2f2f2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0px 4px 0px 4px;
+}
+.information-name-top_div ul li:first-child{
+    width: 10rem;
+    padding: 0;
+    position: fixed;
+    left: 0;
+    z-index: 11111;
+    background: #013366;
+}
+.Contract-information-name .information-name-content {
+    width: 100%;
+    height:100%;
+    overflow: scroll;
+    position: fixed;
+    top: 9.8rem;
+    left: 10rem;
+}
+#information-name-content_div ul:first-child li {
+        border-top:0;
+}
+#information-name-content_div ul li{
+    width: 80px;
+    float: left;
+    line-height: 48px;
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0px 4px 0px 4px;
+    border-top: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+}
+#information-name-content_div ul:last-child li{
+    border-bottom: 1px solid #e2e2e2;
+}
+
+/*Watchlist-Edit-details*/
+#Edit-details-title {
+    line-height: 68px;
+    text-align: center;
+    color: #f2f2f2;
+    font-size: 18px;
+    padding-left: 34px;
+}
+#Watchlist-Edit-details {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    display:none;
+    z-index:111111;
+}
+#Watchlist-Edit-details .OrderStatus-Detail-content {
+    margin-top: 4rem;
+}
+#Complete {
+    padding-right: 0;
+    font-size: 14px;
+    margin-left: 0px;
+}
+#Watchlist-Edit-details .OrderStatus-Detail-content li:nth-child(even) {
+    width: 100%;
+    height: 46px;
+    overflow: hidden;
+    border-bottom: 1px solid #E2E2E2;
+    position:relative;
+    background: #f2f2f2;
+}
+#Watchlist-Edit-details .OrderStatus-Detail-content li:nth-child(even) a{
+    display: block;
+    width: 34px;
+    height: 30px;
+    padding: 4px;
+    float: left;
+    margin: 4px 4px 4px 30px;
+    font-size: 14px;
+    background: #8d8d02;
+    color: #f2f2f2;
+    text-indent: 0;
+    text-align: center;
+    overflow: hidden;
+    word-break: break-word;
+}
+#Watchlist-Edit-details .OrderStatus-Detail-content li:nth-child(even) div{
+    float: right;
+    width: 75%;
+    height: 22px;
+    text-indent: 0;
+    line-height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#Watchlist-Edit-details .OrderStatus-Detail-content ul li:nth-child(even) div:last-child {
+    font-size:12px;
+}
+#Watchlist-Edit-details .OrderStatus-Detail-content li:nth-child(even) input {
+    position: absolute;
+    left: 10px;
+}
+#Watchlist-Edit-details .OrderStatus-Detail-content {
+    position: fixed;
+    top: 0px;
+    left: 0;
+}
+#Watchlist-Edit-details .OrderStatus-Detail-content ul {
+    width: 100%;
+    padding: 0px;
+}
+/*Order*/
+.tabOrdStats-title {
+    font-size: 24px!important;
+    left: -78.5px!important;
+    color: #f2f2f2;
+}
+.Order-content {
+    position: absolute;
+    top: 3.8rem;
+    width: 100%;
+    height: 100%;
+}
+.Order-content-top {
+    width: 100%;
+    height: 59px;
+    background: #013366;
+}
+.Order-content-top a{
+    display: block;
+    color: #f2f2f2;
+    padding: 1rem 0 1rem 0;
+    font-size: 16px;
+}
+.Order-content-top .active {
+    border-bottom: 2px solid #F78E1E;
+    color: #F78E1E;
+}
+.Order-content-top a:first-child{
+    float: left;
+    padding: 1rem 2.3rem 1rem 2.3rem;
+}
+.Order-content-top a:last-child{
+    float:right;
+    padding: 1rem 1.8rem 1rem 1.8rem;
+}
+#TodayOrder {
+    position:relative;
+}
+.OrderStatus-content {
+    padding-top: 0px;
+    background: #f2f2f2;
+}
+.Contract-information-name::after{
+    display:none;
+    content: "No data!";
+    position: absolute;
+    font-size: 16px;
+    color: #c7c7c7;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.OrderStatus-content .OrderStatus-left {
+    top: 2.5rem;
+}
+.OrderStatus-content .OrderHistory-left {
+    top: 5.6rem;
+}
+
+.OrderStatus-content .OrderStatus-content-content{
+    top: 2.5rem;
+    left: 10rem;
+}
+.OrderStatus-content .OrderHistory-content-content {
+    top: 5.6rem;
+    left: 10rem;
+}
+.OrderStatus-top div {
+width: 568px;
+}
+.OrderStatus-top ul li {
+    width: 128px;
+}
+#TodayOrder-content-details {
+    background:#f2f2f2;
+}
+#TodayOrder-content-details table {
+    border-top: 1px solid #e2e2e2;
+}
+#TodayOrder-content-details table:last-child {
+    border-bottom: 1px solid #e2e2e2;
+}
+#TodayOrder-content-details table td{
+    width: 138px;
+    font-size: 14px;
+    overflow:hidden;
+    text-align: center;
+}
+#TodayOrder-content-details table tr:first-child td:nth-child(2){
+    text-align:left;
+}
+#TodayOrder-content-details table tr:last-child td:nth-child(1){
+    text-align:left;
+}
+.OrderStatus-Historicaldate {
+    width: 100%;
+    height: 48px;
+}
+.OrderStatus-Historicaldate select {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    text-indent: 0.5rem;
+}
+#OrderHistory-content-details {
+    background:#f2f2f2;
+}
+#OrderHistory-content-details table {
+    border-top: 1px solid #e2e2e2;
+}
+#OrderHistory-content-details table:last-child {
+    border-bottom: 1px solid #e2e2e2;
+}
+#OrderHistory-content-details table td{
+    width: 138px;
+    font-size: 14px;
+    overflow:hidden;
+    text-align: center;
+}
+#OrderHistory-content-details table tr:first-child td:nth-child(2){
+    text-align:left;
+}
+#OrderHistory-content-details table tr:last-child td:nth-child(1){
+    text-align:left;
+}
+/*OrderStatus-Detail*/
+.Modular-Detail {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: #000;
+    z-index: 11111;
+}
+.OrderStatus-Detail-top {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    z-index: 11111;
+}
+.clear-shadow .left-exit{
+    margin-right: 0;
+}
+.Detail-top-title {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.Detail-top-title a {
+    display: block;
+    width: 30px;
+    height: 26px;
+    padding: 4px;
+    line-height: 12px;
+    float: left;
+    margin-top: .8rem;
+    font-size: 13px;
+    background: #8d8d02;
+    color: #f2f2f2;
+    text-align: center;
+    overflow: hidden;
+    word-break: break-word;
+}
+.Detail-top-title div {
+    width: 76%;
+    height: 72%;
+    padding-right: 0.6rem;
+    line-height: 22px;
+    font-size: 18px;
+    text-align: center;
+    color: #f2f2f2;
+    overflow: hidden;
+    float: left;
+    margin-top: 1rem;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+.clear-shadow {
+    box-shadow:none;
+    padding: 0 6px 0 6px;
+}
+.Detailtitle-bottom-left {
+    width: 6rem;
+    height: 100%;
+    float: left;
+    padding-left: 4px;
+}
+
+    .Detailtitle-bottom-left h3 {
+        font-size: 24px;
+        letter-spacing: 0px;
+        color: #f2f2f2;
+    }
+
+    .Detailtitle-bottom-left ul {
+        /*width: 88%;*/
+        height: 22px;
+        /*margin-left: 4px;*/
+        padding-left: 0px;
+    }
+
+        .Detailtitle-bottom-left ul li {
+            float: left;
+            letter-spacing: 0px;
+            /*padding-right: 8px;*/
+            color: #f2f2f2;
+            font-size: 12px;
+        }
+
+.Detailtitle-bottom-right {
+    /*float: right;*/
+    height: 100%;
+    /*width: 62%;*/
+    margin-right: 14px;
+    padding-left: 7rem;
+}
+
+    .Detailtitle-bottom-right ul li {
+        float: left;
+        width: 27.5%;
+        line-height: 28px;
+        font-size: 14px;
+        color: #f2f2f2;
+        padding-right: 4px;
+        text-align: center;
+    }
+
+    .Detailtitle-bottom-right ul:first-child li:nth-child(odd) {
+        font-size: 14px;
+        color: #c1c1c1;
+        width: 18%;
+        text-align: left;
+    }
+
+    .Detailtitle-bottom-right ul:last-child li:nth-child(odd) {
+        font-size: 14px;
+        color: #c1c1c1;
+        width: 18%;
+    }
+.Detailtitle-top-last {
+    width: 100%;
+    line-height: 36px;
+    font-size: 16px;
+    text-align: center;
+    background: #f2f2f2;
+}
+.OrderStatus-Detail-content {
+    width: 100%;
+    height:100%;
+    background: #f2f2f2;
+    margin-top: 7.5rem;
+    overflow: scroll;
+}
+.Trade-Top-div .OrderStatus-Detail-content {
+    /* width: 100%; */
+    /* height:100%; */
+    background: #f2f2f2;
+    margin-top: 7.5rem;
+    overflow: scroll;
+}
+}
+#Watchlist-Edit-details .OrderStatus-Detail-content {
+    position: absolute;
+    top: -4px;
+    height:initial;
+}
+.OrderStatus-Detail-content ul {
+    padding:0 0.4rem 0 0.4rem;
+}
+.Detail-bottom-title-content ul {
+    width: 96%;
+    height: 44px;
+    border-bottom: 1px solid #c7c7c7;
+}
+.Detail-content-top {
+    width: 95%;
+    height: auto;
+    padding: 0 2.5% 0;
+}
+.Modular-Detail #OrderStatus-Detail-content div:first-child{
+    padding: 40 2.5% 0;
+}
+.Trade-Top-div .Detail-content-top {
+    width: 95%;
+    height: 394px;
+    padding: 2.5%;
+    position: fixed;
+    bottom: 80px;
+    overflow: scroll;
+}
+.Detail-content-top li {
+    width: 45%;
+    height: 2.4rem;
+    float: left;
+    color: #757575;
+    line-height: 2.4rem;
+}
+.Detail-content-top ul {
+    height: 2.4rem;
+}
+.Detail-content-top ul:last-child li:first-child{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.Detail-content-top ul li:nth-child(odd) {
+    color: #000;
+    float: right;
+    font-size: 16px;
+    text-align: right;
+    width: 55%;
+    white-space:nowrap; 
+    overflow:hidden;
+    text-overflow:ellipsis;
+    
+}
+.Detail-content-bottom {
+    width: 100%;
+    height: 17.75rem;
+}
+.Detail-bottom-title-name {
+    line-height: 28px;
+    text-align: center;
+    font-size: 13px;
+    color: #6D6D6D;
+}
+.Detail-bottom-title {
+    width: 100%;
+    height: 42px;
+    background: #787C81;
+}
+.Detail-bottom-title ul li{
+    float: left;
+    line-height: 2.6rem;
+    width: 28%;
+    color: #f2f2f2;
+}
+.Detail-bottom-title ul li:nth-child(2){
+    text-align:center;
+    width: 44%;
+}
+.Detail-bottom-title ul li:last-child{
+    text-align:right;
+}
+
+.Detail-bottom-title-content ul li{
+    float: left;
+    line-height: 2.75rem;
+    width: 30%;
+    height: 44px;
+    overflow: hidden;
+    font-size:12px;
+    color: #747474;
+    border-right: 1px solid #c7c7c7;
+}
+.Detail-bottom-title-content ul li:nth-child(2){
+    text-align:center;
+    width: 39%;
+}
+.Detail-bottom-title-content ul li:last-child{
+    text-align:right;
+    border-right: none;
+    line-height: 22px;
+}
+.OrderStatus-Detail-bottom {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 3.4rem;
+    background: #013366;
+}
+.OrderStatus-Detail-bottom button{
+    outline: 0;
+    border: 0;
+    background: transparent;
+    color: #F48D1F;
+    font-size: 18px;
+    font-family: "STKaiti";
+    line-height: 3.4rem;
+}
+.OrderStatus-Detail-bottom button:first-child{
+    float: left;
+    padding-left: 3rem;
+}
+.OrderStatus-Detail-bottom button:last-child{
+    float: right;
+    padding-right: 3.75rem;
+}
+#Watchlist-Edit-details .OrderStatus-Detail-bottom button {
+    float: none;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+}
+/*Withdraw*/
+#Withdraw-div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 11111;
+    display:none;
+    background: rgba(0, 0, 0, 0.45);
+}
+#Withdraw-div > div {
+    background: #f2f2f2;
+    width: 90%;
+    height: auto;
+    padding:0.2rem 0.4rem 0.2rem 0.4rem;
+    position:relative;
+    top: 48%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+#Withdraw-div > div p{
+    text-align: center;
+    padding: 0.2rem 0 0.2rem 0;
+    font-size: 12px;
+    line-height: 18px;
+    color: #ABABAB;
+    word-wrap: break-word;
+}
+#Withdraw-div > div p:first-child{
+    font-size: 14px;
+}
+#Withdraw-div > div input{
+    height: 40px;
+    width: 92%;
+    border: 1px solid rgba(28, 51, 13, 0.6);
+    font-size: 16px;
+    text-align: center;
+    color: #4a4848;
+    -webkit-transform: translate(0%,0);
+    transform: translate(0%,0);
+}
+#Withdraw-div > div div:last-child{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+#Withdraw-div > div div:last-child a {
+    font-size: 16px;    
+    color: #DE805C;
+    line-height: 50px;
+}
+#Withdraw-div > div div:last-child a:first-child{
+    float: left;
+    padding-left: 2.4rem;
+}
+#Withdraw-div > div div:last-child a:last-child{
+    float: right;
+    padding-right: 2.4rem;
+}
+/*Amend*/
+#Amend-div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    z-index: 11111;
+    background: rgba(0, 0, 0, 0.45);
+}
+#Amend-div > div {
+    background: #f2f2f2;
+    width: 90%;
+    height: auto;
+    padding: 0.8rem 0.4rem 0.2rem 0.4rem;
+    position:relative;
+    top: 48%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+#Amend-div > div p{
+    text-align: center;
+    padding: 0.2rem 0 0.2rem 0;
+    font-size: 12px;
+    color: #ABABAB;
+    line-height: 18px;
+    word-wrap: break-word;
+}
+#Amend-div > div p span{
+    width: 46%;
+    display: block;
+    text-align: left;
+}
+#Amend-div > div p span:first-child{
+    float: left;
+    padding-left: 0.6rem;
+}
+#Amend-div > div p span:last-child{
+    float: right;
+    padding-right: 0.6rem;
+}
+#Amend-div .Price-Qty-input{
+    clear: both;
+    width: 94%;
+    height: 30px;
+    left: 0%;
+    -webkit-transform: translate(2.4%,0%);
+    transform: translate(3.4%,0%);
+}
+.Price-Qty-input input{
+    width: 46%;
+    height: 100%;
+    text-indent: 0.4rem;
+    border: 1px solid rgba(28, 51, 13, 0.6);
+}
+.Price-Qty-input input:first-child{
+    float: left;
+}
+#Amend-div > div p:nth-last-of-type(1) input{
+    width: 95%;
+    text-align: left;
+    height: 34px;
+}
+#Amend-div > div div:last-child{
+    width: 100%;
+    height: 46px;
+    text-align: center;
+}
+#Amend-div > div div:last-child a {
+    font-size: 16px;    
+    color: #DE805C;
+    line-height: 50px;
+}
+#Amend-div > div div:last-child a:first-child{
+    float: left;
+    padding-left: 2.4rem;
+}
+#Amend-div > div div:last-child a:last-child{
+    float: right;
+    padding-right: 2.4rem;
+}
+/*Portfolio*/
+.Portfolio{
+    box-shadow: 0px 2px 4px 0px #010d1a;
+    background: #013366;
+    width: 100%;
+    height: 60px;
+}
+.Portfolio-content {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.Portfolio-top-title {
+    text-align: center;
+    padding: 6px 2rem 0 1.4rem;
+    color: #f2f2f2;
+    font-size: 20px;
+    line-height: 18px;
+}
+.Portfolio-top-title span {
+    font-size: 14px;
+}
+.Portfolio-content-top {
+    margin-top: 60px;
+    width: 100%;
+    height: 14rem;
+    background: #f2f2f2;
+    border-bottom: 1px solid #D2D3D4;
+}    
+.Portfolio-content-top p{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bolder;
+    color: #6D6D6D;
+}
+.Portfolio-content-top .canvas-div {
+    width: 68%;
+    height: 12rem;
+    float: left;
+}
+.Portfolio-content-top .canvas-div canvas{
+    width: 380px;
+    height: 188px;
+}
+.product-div {
+    width: 32%;
+    height: 11rem;
+    float: right;
+    padding-top: 14px;
+}
+.product-div li{
+    margin-top: 2px;
+    height: 40px;
+}
+.Portfolio-content-top .product-div a {
+    display: block;
+    width: 30px;
+    height: 28px;
+    padding: 4px;
+    line-height: 14px;
+    float: left;
+    font-size: 13px;
+    color: #f2f2f2;
+    text-align: center;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.product-div div {
+    width: 50%;
+    height: 34px;
+    padding-left: 0.2rem;
+    line-height: 32px;
+    font-size: 14px;
+    text-align: left;
+    color: #909090;
+    overflow: hidden;
+    float: left;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+.Portfolio-content-bottom {
+    clear: both;
+    width: 100%;
+    height: auto;
+}
+.Portfolio-content-bottom-top {
+    background: #f2f2f2;
+    padding: 0 .6rem 0 .6rem;
+}
+.Portfolio-content-bottom-top p{
+    line-height: 38px;
+    font-size: 15px;
+    color: #777;
+}
+.Portfolio-content-bottom-top p span:last-child{
+    float: right;
+}
+.Portfolio-content-bottom-content {
+    width: 100%;
+    height: auto;
+    background:#f2f2f2;
+}
+.Portfolio-content-bottom-content ul{
+    width: 100%;
+    height: 42px;
+    border-bottom: 1px solid #d7d7d7;
+}
+.Portfolio-content-bottom-content ul:active{
+    background:#00b1ff;
+}
+.Portfolio-content-bottom-content ul li{
+    padding: 0 .6rem 0 .6rem;
+}
+
+.Portfolio-content-bottom-content ul li a {
+    display: block;
+    width: 30px;
+    height: 28px;
+    padding: 4px;
+    line-height: 14px;
+    float: left;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #f2f2f2;
+    background: #000;
+    text-align: center;
+    overflow: hidden;
+    word-break: break-word;
+}
+.Portfolio-content-bottom-content ul li div {
+    width: 81.5%;
+    height: 34px;
+    padding-left: 1rem;
+    line-height: 16px;
+    text-align: left;
+    color: #909090;
+    overflow: hidden;
+    float: left;
+    margin-top: 0.25rem;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+.Portfolio-content-bottom-content ul li div p {
+    line-height: 17px;
+    font-size: 10px;
+}
+
+.Portfolio-content-bottom-content ul li div p span {
+    line-height: 17px;
+    font-size: 14px;
+    color: #333;
+}
+.Portfolio-content-bottom-content ul li div p:first-child span:last-child{
+    float: right;
+    color: #000;
+}
+.Portfolio-content-bottom-tt {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+.Portfolio-content-bottom-tt p{
+    line-height: 36px;
+    color: #f2f2f2;
+    font-size: 16px;
+    background: #797C81;
+    padding:0 .4rem 0 .4rem
+}
+.Portfolio-content-bottom-tt span:last-child{
+    float:right;
+}
+.Portfolio-content-bottom-tt p:last-child{
+    line-height: 24px;
+    text-align: right;
+    font-size: 14px;
+    background: #013366;
+}
+.Portfolio-content-bottom-tt p:last-child a{
+    color: #829BB4;
+}
+.show-Disclaimer {
+    display:none;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    z-index: 1111;
+    background: #f2f2f2;
+}
+.Disclaimer-content {
+    font-size: 14px;
+    width: 96%;
+    height: 88%;
+    padding: 2% 2% 0 2%;
+    background: #f2f2f2;
+    overflow: scroll;
+    word-break: break-word;
+}
+.Disclaimer-bottom {
+    height: 10%;
+    width: 96%;
+    margin: auto;
+    text-align: center;
+    line-height: 64px;
+    font-size: 20px;
+    color: #14c514;
+}
+
+/*Portfolio-Detail*/
+#Portfolio-Detail {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1111;
+}
+.Portfolio-Detail-content-top {
+    width: 100%;
+    height: 59px;
+    background: #013366;
+    position: absolute;
+    top: 60px;
+    z-index: 1;
+}
+.Portfolio-Detail-content-top a{
+    display: block;
+    color: #f2f2f2;
+    padding: 1rem 0 1rem 0;
+    font-size: 16px;
+}
+.Portfolio-Detail-content-top .active {
+    border-bottom: 2px solid #F78E1E;
+    color: #F78E1E;
+}
+.Portfolio-Detail-content-top a:first-child{
+    float: left;
+    padding: 1rem 0.4rem 1rem 1.3rem;
+}
+.Portfolio-Detail-content-top a:last-child{
+    float:right;
+    padding: 1rem 0rem 1rem 0rem;
+}
+
+#AccountNo-Detail {
+    position:relative;
+}
+.PortfolioDetail-content {
+    padding-top: 0px;
+    background: #f2f2f2;
+}
+.Contract-information-name::after{
+    display:none;
+    content: "No data!";
+    position: absolute;
+    font-size: 16px;
+    color: #c7c7c7;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.PortfolioDetail-title-top {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 59px;
+    background: #013366;
+    color: #f2f2f2;
+}
+.PortfolioDetail-content .PortfolioDetail-top {
+    font-size: 16px;
+    color: #f2f2f2;
+    top: 3.6rem;
+}
+.PortfolioDetail-top div {
+    width: 1232px;
+}
+.PortfolioDetail-top ul li {
+    float: left;
+    line-height: 40px;
+    width: 33.3%;
+    font-size: 14px;
+    text-align: center;
+}
+.PortfolioDetail-top .top_div-name li{
+    float: left;
+    line-height: 40px;
+    width: 128px;
+    font-size: 14px;
+    text-align: center;
+}
+.PortfolioDetail-content .PositionS-left {
+    top: 6.2rem;
+}
+.PortfolioDetail-content .PositionS-content-content {
+    top: 6.2rem;
+}
+#PositionS-content-details ul {
+    width: 1232px;
+    height:49px;
+}
+#PositionS-content-details li {
+    width: 128px;
+    float: left;
+    line-height: 48px;
+    font-size: 12px;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0px 4px 0px 4px;
+    border-top: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+}
+
+.PortfolioDetail-content-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 99px;
+    overflow: scroll;
+}
+.PortfolioDetail-content-content div{
+    width: 100%;
+}
+.PortfolioDetail-content-content ul li{
+    float: left;
+    width: 33%;
+    line-height: 40px;
+    text-align: center;
+    color: #707070;
+    font-size: 15px;
+}
+.AccountNo-Detail {
+    bottom: 60px;
+}
+.AccountNo-Detail p:first-child{
+    font-size: 12px;
+    color: #8099B3;
+    text-align:left;
+}
+.PortfolioDetail-content-content ul{
+    border-bottom: 1px solid #E2E3E3;
+    height: 40px;
+}
+.PortfolioDetail-content-content ul li:first-child{
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    line-height: 16px;
+    padding-top: 12px;
+}
+.PortfolioDetail-content-content ul li:first-child + li{
+    border-left: 1px solid #E2E3E3;
+}
+.PortfolioDetail-content-content ul li:first-child span{
+    border-bottom:1px dotted #CACACA;
+    padding: 0 0 1px 0;
+}
+#Portfolio-title-Text a {
+    display: block;
+    width: 32px;
+    height: 30px;
+    padding: 4px;
+    line-height: 13px;
+    float: left;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #f2f2f2;
+    background: #000;
+    text-align: center;
+    overflow: hidden;
+    word-break: break-word;
+}
+#Portfolio-title-Text div {
+	width: 68.5%;
+	height: 100%;
+	padding-left: 0.4rem;
+	line-height: 18px;
+	font-size: 12px;
+	text-align: left;
+	color: #f2f2f2;
+	overflow: hidden;
+	float: left;
+	text-overflow: ellipsis;
+	word-break: break-word;
+}
+.PositionS {
+    bottom: 60px;
+    z-index:1;
+}
+.PositionS p:last-child {
+    font-size:12px;
+    color: #8099B3;
+    text-align:left;
+}
+#PositionS-content-details {
+    background:#f2f2f2;
+}
+.Portfolio-title {
+    width: 84%;
+    height: 40px;
+}
+#Portfolio-title-Text {
+    padding-right: 2rem;
+    font-size: 14px;
+    color: #f2f2f2;
+    letter-spacing: 2px;
+    position: relative;
+    height: 56px;
+    margin-top: -6px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#Portfolio-title-Text span {
+    position: absolute;
+    display: block;
+    top: 42%;
+    right: 15%;
+    border-left: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #f2f2f2;
+}
+#Position-s .PositionS-left ul li {
+    background: #eee;
+}
+#Position-s .PositionS-content-details {
+    background: #eee;
+}
+#PositionS-content-details .secondLevel li{
+    height: 32px;
+    line-height: 32px;
+    background: #fff;
+}
+#Position-s .secondLevelLi {
+
+}
+#PositionS-content-details ul:last-child {
+    border-bottom: 1px solid #e2e2e2;
+}
+#Portfolio-drop-down {
+    position: absolute;
+    width: 12rem;
+    top: 46px;
+    left: 52%;
+    z-index: 1111;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.63);
+}
+#Portfolio-drop-down li {    
+    color: #333;
+    font-size: 16px;
+    padding: 2px 0.5rem 2px 0.5rem;
+    text-align: left;
+    background:#eee;
+    border-top: 1px solid #D6D6D6;
+}
+#Portfolio-drop-down li:first-child{
+    background: #003366;
+    color: rgba(0, 0, 0, 0.53);
+    padding: 2px 3rem 2px 3rem;
+    border-top: 0;
+    text-align: center;
+}
+#Portfolio-drop-down li:first-child::before{
+    position: absolute;
+    top: -9px;
+    border-bottom: 5px solid #003366;
+    left: 45%;
+    content: "";
+    border-top: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+/*Position*/
+.Position-content {
+    width:100%;
+    height:100%;
+    margin-top: 60px;
+}
+.Position-top-title {
+    text-align: center;
+    color: #f2f2f2;
+    font-size: 20px;
+    width: 100%;
+    line-height: 18px;
+    padding-right: 2rem;
+}
+.Position-top-title span{
+    font-size: 14px;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+.Position-top {
+    width: 100%;
+    height: 36px;
+    background: #013366;
+} 
+.Position-top {
+    width: 100%;
+    height: 36px;
+    background: #013366;
+} 
+.Position-top li{
+    color: #f2f2f2;
+    font-size: 15px;
+    line-height: 36px;
+} 
+.Position-top li:first-child{
+    float: left;
+    text-indent: 0.6rem;
+} 
+.Position-top li:last-child{
+    float: right;
+    padding-right: 0.6rem;
+} 
+.Position-content-content {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    position: fixed;
+    top: 6rem;
+}
+.Position-content-select {
+    width:100%;
+    height:auto;
+}
+.Position-content-select-bottom {
+    width:100%;
+}
+.Position-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #013366;
+}
+.Position-content-select-top {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-indent: .6rem;
+    background: #939598;
+    font-size: 14px;
+    color: #333;
+    position: relative;
+    border-bottom: 1px solid transparent;
+}
+.Position-content-select-top span{
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: .6rem;
+    border-left: 10px solid transparent;
+    border-top: 10px solid #434446;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+.Position-bottom p{
+    line-height: 30px;
+}
+.Position-bottom p span:first-child{
+    padding-left: .6rem;
+    font-size: 12px;
+    color: #f2f2f2;
+}
+.Position-bottom p span:last-child{
+    float: right;
+    padding-right: .6rem;
+    color: #849DB6;
+    font-size: 14px;
+}
+.Position-content-select-bottom ul {
+    width: 100%;
+    height: 42px;
+    border-bottom: 1px solid #D8D8D8;
+}
+.Position-content-select-bottom ul li{
+    line-height: 40px;
+}
+.Position-content-select-bottom ul li:first-child{
+    float: left;
+    width: 57%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.Position-content-select-bottom ul li:last-child{
+    float: right;
+    width: 40%;
+    text-align: right;
+    margin-right: .6rem;
+}
+.Position-content-select-bottom ul li a{
+    display: block;
+    width: 28px;
+    height: 26px;
+    padding: 4px;
+    line-height: 26px;
+    float: left;
+    margin-top: 6px;
+    margin-left: .6rem;
+    font-size: 13px;
+    color: #f2f2f2;
+    background: #000;
+    text-align: center;
+    overflow: hidden;
+    word-break: break-word;
+}
+.Position-content-select-bottom ul li div{
+    width: 70%;
+    height: 34px;
+    padding-left: 0.4rem;
+    text-align: left;
+    color: #333;
+    overflow: hidden;
+    line-height: 28px;
+    padding-top: 0.5rem;
+    float: left;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+.Position-content-select-bottom p {
+    width: 100%;
+    height: 42px;
+    text-align: left;
+    display: inline-block;
+    line-height: 40px;
+    text-indent: .6rem;
+    font-size: 14px;
+    color: #767676;
+}
+.Position-select-box {
+    width: 100%;
+    height: 150px;
+}
+#Position-show-Disclaimer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #f2f2f2;
+    top: 0;
+}
+/*OutstandingPositions-Detail*/
+#OutstandingPositions-Detail {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: #000;
+    z-index: 1111;
+}
+
+.OutstandingPositions-Detail-TOP {
+    height: 2.5rem;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 2.5rem;
+    z-index: 11;
+	background: #f2f2f2;
+}
+
+.OutstandingPositions-Detail-content {
+    margin-top: 7.5rem;
+}
+
+.OutstandingPositions-Detail-content .Detail-content-top {
+    padding-top: 2.5rem;
+    overflow: scroll;
+}
+#OutstandingPositions-Detail-content .Detail-content-top ul {
+    height: 3.2rem;
+}
+.OutstandingPositions-Detail-content .OutstandingPositions-content-down-top li:first-child {
+    width: 66%;
+}
+.OutstandingPositions-Detail-content .OutstandingPositions-content-down-top li:nth-child(2){
+    width: 28%;
+    color:#000;
+}
+.OutstandingPositions-Detail-content .OutstandingPositions-content-down-bottom li:nth-child(odd) {
+    width: 66%;
+}
+.OutstandingPositions-Detail-content .OutstandingPositions-content-down-bottom li{
+    width: 32%;
+}
+.OutstandingPositions-Detail-content .OutstandingPositions-content-down-bottom ul:nth-child(2) li:first-child {
+    font-size: 12px;
+}
+.OutstandingPositions-bottom {
+    height: 2rem;
+    background: #186bdb;
+}
+#OutstandingPositions-Detail-content .Detail-content-top .OutstandingPositions-content-down-top{
+    padding-left: 26px;
+    height: 2.4rem;
+    position:relative;
+    background: #939598;
+    margin-bottom: 1px;
+}
+.OutstandingPositions-content-down-top span {
+    position: absolute;
+    top: 8px;
+    left: 6px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid #333;
+}
+#Trade {
+    float: none;
+    padding: 0px;
+    line-height: 2rem;
+    width: 100%;
+    color: #f2f2f2;
+}
+.Position-top-title ul li a {
+    display: block;
+    width: 28px;
+    height: 28px;
+    padding: 4px;
+    line-height: 13px;
+    float: left;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #f2f2f2;
+    background: #000;
+    text-align: center;
+    overflow: hidden;
+    word-break: break-word;
+}
+.Position-top-title div {
+    width: 66%;
+    height: 34px;
+    padding-left: 0.2rem;
+    line-height: 32px;
+    font-size: 14px;
+    margin-top: 6px;
+    text-align: center;
+    color: #f2f2f2;
+    overflow: hidden;
+    float: left;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+#OutstandingPositions-top-title {
+    padding: 10px .8rem 0 .8rem;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#Position-show-Disclaimer .Position-top-title {
+    line-height: 58px;
+    padding:0;
+}
+/**/
+#tabTrade {
+    position: relative;
+    overflow: auto;
+}
+.tabTrade-title {
+    font-size: 24px!important;
+    left: -78.5px!important;
+    color: #f2f2f2;
+}
+.Trade-title {
+    font-size: 20px;
+    color: #f2f2f2;
+    letter-spacing: 2px;
+    width: 100%;
+    padding-right: 1rem;
+    text-align: center;
+    height: 34px;
+}
+#Trade-content {
+    width: 100%;
+    height: 100%;
+    margin-top: 60px;
+}
+.Contract-title {
+    width: 100%;
+    padding: 0.4rem 0px 0.4rem 0px;
+    text-indent: 0.4rem;
+    position: fixed;
+    top: 118px;
+    height: 18px;
+    color: #f2f2f2;
+    left: 0;
+    z-index: 1111;
+    background: #787878;
+}
+.Trade-search-list {
+    width: 100%;
+    position: fixed;
+    background: #f2f2f2;
+    top: 148px;
+    height: 100%;
+    overflow: scroll;
+}
+.Trade-ContractSearch {
+    width: 100%;
+    background: #013366;
+    text-indent: 0.4rem;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 1111;
+}
+.Trade-search-list ul li {
+    width: 100%;
+    height: 44px;
+    overflow: hidden;
+    border-bottom: 1px solid #E2E2E2;
+}
+.Trade-search-list p{
+    padding: 6px 0px 6px 0px;
+    text-align: center;
+}
+.Trade-search-list li a{
+    display: block;
+    width: 34px;
+    height: 30px;
+    padding: 4px;
+    float: left;
+    margin: 4px;
+    font-size: 14px;
+    background: #8d8d02;
+    color: #f2f2f2;
+    text-indent: 0;
+    text-align: center;
+    overflow: hidden;
+    word-break: break-word;
+}
+.Trade-search-list li div{
+    float: right;
+    width: 83%;
+    height: 22px;
+    text-indent: 0;
+    line-height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.Trade-search-list li div:last-child {
+    font-size:12px;
+}
+#Trade-ContractSearch {
+    display:none;
+}
+
+/* 附带公用 */
+.clear_box {
+	clear:both;
+}
+
+
+
+
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>portrait iphone5*/
+@media only screen and (min-width : 375px) and (orientation : portrait) {
+    .Detailtitle-bottom-right ul:last-child li:nth-child(odd) {
+        width: 15%;
+    }
+
+    .Detailtitle-bottom-right ul:last-child li {
+        width: 30%;
+    }
+    .Portfolio-top-title {
+        padding: 6px 4rem 0 3.4rem;
+    }
+    /*.Position-top-title {
+        padding: 6px 4rem 0 3.4rem;
+    }*/
+}
+
+@media only screen and (min-width : 414px) and (orientation : portrait) {
+    .Detailtitle-bottom-right ul:last-child li:nth-child(odd) {
+        width: 13%;
+    }
+
+    .Detailtitle-bottom-right ul:last-child li {
+        width: 32%;
+    }
+    .Portfolio-top-title {
+        padding: 6px 5rem 0 3.4rem;
+    }
+
+    /*.Position-top-title {
+        padding: 6px 5rem 0 3.4rem;
+    }*/
+}
+@media all and (orientation : landscape) {
+    /*watch list*/
+    #tabWatchlist .zIndex {
+        display: none;
+    }
+
+    #tabWatchlist #Watchlist-content .ContractSearch {
+        display: none;
+    }
+
+    #tabWatchlist #Watchlist-content {
+        margin-top: 0px;
+    }
+
+    #tabWatchlist #Watchlist-content .Contract-information-name {
+        padding-top: 0px;
+    }
+
+    #Watchlist-content .Contract-information-name .information-name-left {
+        top: 40px;
+    }
+
+    #Watchlist-content .Contract-information-name .information-name-content {
+        top: 2.5rem;
+    }
+    /*order status*/
+    #tabOrdStats .navbar  {
+        display: none;
+    }
+
+    #tabOrdStats .Order-content-top {
+        display: none;
+    }
+
+    #tabOrdStats .Order-content {
+        top: 0px;
+    }
+
+    /*portfolio-positions*/
+    #Portfolio-Detail .Portfolio  {
+        display: none;
+    }
+
+    #Portfolio-Detail .Portfolio-Detail-content-top {
+        display: none;
+    }
+
+    #Portfolio-Detail .PortfolioDetail-title-top {
+        top: 0px;
+    }
+    #Portfolio-Detail .PortfolioDetail-content-content {
+        top: 40px;
+    }
+    #Portfolio-Detail #AccountNo-Detail-bottom ,#Portfolio-Detail #PositionS-bottom,#Portfolio-Detail PositionS-bottom {
+        bottom: 0px;
+    }
+    #Portfolio-Detail .PortfolioDetail-top {
+        top: 0px;
+    }
+
+    #Portfolio-Detail .PositionS-left {
+        top: 40px;
+    }
+
+    #Portfolio-Detail .PositionS-content-content {
+        top: 40px;
+    }
+
+}

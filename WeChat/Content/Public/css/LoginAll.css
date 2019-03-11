@@ -1,0 +1,368 @@
+﻿/*
+    Note: Including all before login (Login style)
+*/
+
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+body {
+    position: relative;
+    background: #DDE7F1;
+    line-height: 1.6;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    -webkit-text-size-adjust: 100% !important;
+}
+
+.Login-Top {
+    width: 100%;
+    text-align: center;
+    padding-top: 66px;
+    height: 100px;
+}
+
+.Login-Bottom {
+    width: 100%;
+    text-align: center;
+}
+
+    .Login-Bottom input {
+        width: 100%;
+        height: 46px;
+        margin-top: 4px;
+        text-indent: 3.2em;
+        outline: 0;
+        border-radius: 2px;
+        border: 0;
+        font-size: 18px;
+    }
+
+.account {
+    position: relative;
+}
+
+.passwd {
+    position: relative;
+}
+
+.account img {
+    position: absolute;
+    top: 0.88em;
+    left: 1.5em;
+}
+
+.passwd img {
+    position: absolute;
+    top: 0.88em;
+    left: 1.5em;
+}
+
+.Login-Bottom button {
+    height: 42px;
+    border: 0;
+    outline: 0;
+    width: 68%;
+    border-radius: 4px;
+    margin-top: 20px;
+    background: #16365C;
+    color: #f2f2f2;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.dialog-content {
+    position: relative;
+    width: 90%;
+    background: #f2f2f2;
+    border-radius: 4px;
+    padding: 10px;
+    top: 42%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+    .dialog-content .dialog_hd {
+        padding-top: 0.6em;
+    }
+
+    .dialog-content .dialog_bd {
+        padding: 0px 0px 6px 0px;
+        word-break: break-word;
+        font-size: 14px;
+        color: #646464;
+    }
+
+#Login-dialog .dialog-content .dialog_bm a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #12d812;
+}
+
+#Login-dialog {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 111111;
+}
+
+#loading-iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+}
+
+#Prompt {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+}
+
+    #Prompt iframe {
+        border: 0;
+        width: 90%;
+        position: absolute;
+        top: 44%;
+        left: 50%;
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+
+#Login-2FA-Verification {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 111111;
+}
+
+.weui_dialog {
+    z-index: 499;
+    width: 90%;
+    background: #f2f2f2;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+#Login-2FA-Verification .weui_dialog > div:first-child {
+    padding: 0px 0px 2.8em 0px;
+}
+
+#SMS {
+    float: left;
+    width: 50%;
+    background: #ccc;
+    color: #f2f2f2;
+    border-radius: 4px 0px 0px 0px;
+}
+
+#Token {
+    float: right;
+    width: 50%;
+    color: #000;
+    background: #46AB2C;
+    border-radius: 0px 4px 0px 0px;
+}
+
+#OTP {
+    height: 24px;
+    border: 0;
+    line-height: 24px;
+    padding: 0px 2px 0px 2px;
+    background: orange;
+    border-radius: 2px;
+    color: #f2f2f2;
+}
+
+#Login-2FA-Verification .weui_dialog .weui_dialog_hd div {
+    display: inline-block;
+    padding: 10px 0px 10px 0px;
+}
+
+#Login-2FA-Verification .weui_dialog div input {
+    width: 118px;
+    height: 24px;
+    text-indent: 0.2em;
+    outline: 0;
+    border: 1px solid #ccc;
+}
+
+#Login-2FA-Verification .weui_dialog .weui_dialog_bd:last-child {
+    position: relative;
+    padding-bottom: 1.5em;
+}
+
+    #Login-2FA-Verification .weui_dialog .weui_dialog_bd:last-child button:first-child {
+        background: #55B4E0;
+        border: 0px;
+        width: 40%;
+        height: 30px;
+        position: absolute;
+        color: #f2f2f2;
+        border-radius: 4px;
+        transform: translate(20%,0%);
+        -webkit-transform: translate(20%,0%);
+    }
+
+    #Login-2FA-Verification .weui_dialog .weui_dialog_bd:last-child button:last-child {
+        background: #ccc;
+        border: 0px;
+        width: 40%;
+        height: 30px;
+        position: absolute;
+        color: #f2f2f2;
+        border-radius: 4px;
+        transform: translate(130%,-86%);
+        -webkit-transform: translate(130%,-86%);
+    }
+
+#Login-2FA-Verification .weui_dialog .weui_dialog_bd {
+    padding: 0.6em 0px 0.6em 0px;
+    text-align: left;
+}
+
+#input_text + input + button {
+    border: 0px;
+    background: #ED8659;
+    color: #f2f2f2;
+    width: 54px;
+    height: 20px;
+    padding: 2px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+#Login-2FA-Verification .weui_dialog div:last-child a {
+    position: absolute;
+    bottom: 0px;
+}
+
+.showcolor {
+    background: #ccc;
+}
+
+#statement {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 89%;
+    z-index: 1111;
+    background: #DDE7F1;
+    padding: 14% 0 20px 0;
+}
+
+#statement p {
+    padding: 0 16px 0 16px;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    color: #F1884E;
+    word-break: break-all;
+    line-height: 18px;
+}
+
+#statement p:first-child {
+    font-size: 16px;
+    height: 22%;
+}
+
+#statement p:first-child + p {
+    height: 30%;
+}
+
+#statement p:first-child + p button {
+    width: 46%;
+    height: 40px;
+    border: 0;
+    background: #00A3E8;
+    border-radius: 6px;
+    font-size: 18px;
+    color: #faebbd;
+    outline: 0;
+}
+
+#statement p:first-child + p button:last-child {
+    background: #23B14D;
+    float: right;
+    color: red;
+}
+#statement p:last-child {
+    padding-top: 3.5rem;
+}
+#statement p:last-child a {
+    text-decoration: underline;
+    color: #F1884E;
+    font-size: 14px;
+}
+#statement p:last-child a:first-child {
+    width: 49%;
+    display: block;
+    float: left;
+}
+#statement p:last-child a:last-child {
+    display: block;
+    width: 49%;
+    float: right;
+    text-align: right;
+}
+            /*LanguageSwitch*/
+            #LanguageSwitch {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 5%;
+                font-size: 18px;
+                color: #333;
+                font-weight: 500;
+            }
+
+.LanguageSwitch-left {
+    float: left;
+    margin-right: 0.5rem;
+}
+
+.LanguageSwitch-right {
+    width: 262px;
+}
+.LanguageSwitch-right {
+    transition: padding-left 0.2s ease-in 0.2s
+}
+    .LanguageSwitch-right input {
+        vertical-align: middle;
+    }
+
+/*.LanguageSwitch-right .Switch-div {
+        width: 54px;
+        height: 24px;
+        background: #4ED966;
+        border-radius: 16px;
+        float: right;
+        margin-top: -3px;
+        border: 1px solid #ccc;
+        position: relative;
+        transition: background .5s ease-in .1s
+    }
+
+        .LanguageSwitch-right .Switch-div span {
+            display: block;
+            width: 20px;
+            height: 22px;
+            margin-left: 34px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background: #fff;
+        }*/

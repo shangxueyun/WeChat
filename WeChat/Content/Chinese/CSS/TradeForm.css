@@ -1,0 +1,1150 @@
+﻿
+* {
+    margin:0px;
+    padding:0px;
+    list-style:none;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*ST-Trade*/
+#ST-Trade {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: #fff;
+    z-index: 11111;
+    display:none;
+}
+.Trade-Top-div  p {
+    padding-top: 0.45rem;
+}
+.Trade-Top-div  input{
+    border: 1px solid #B2BDBF;
+    width: 100%;
+    border-radius: 2px;
+    font-size: 16px;
+    color: #333;
+    height: 38px;
+    background: #f2f2f2;
+    text-indent:0.3em;
+}
+.Trade-Top-div  select{
+    width: 100%;
+    height: 38px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    border: 1px solid #B2BDBF;
+    background: #f2f2f2;
+}
+.Trade-Top-div  span {
+    color: #6D6D6D;
+    font-size: 13px;
+}
+option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+.Trade-content-div {
+    margin-top: 7.5rem;
+}
+.Trade-Top-div .Trade-content-div input:first-child {
+    width: 48%;
+}
+.Trade-Top-div .Trade-content-div input:nth-child(2) {
+    width: 48%;
+    float: right;
+}
+.Trade-Top-div .Trade-content-div select:nth-child(2) {
+    width: 48%;
+    float: right;
+}
+.Trade-content-div .Detail-content-top p:nth-child(9) select:first-child{
+    width: 48%;
+    float: left;
+}
+.Trade-content-div .Detail-content-top p:last-child input:last-child {
+    width: 100%;
+}
+.Trade-Top-div .Trade-content-div p span:last-child {
+    float: right;
+    width: 47%;
+}
+.Trade-Top-div .Trade-content-div p:nth-child(1) span {
+    float: none;
+    width: 100%;
+}
+.Trade-Top-div .Trade-content-div p:nth-child(7)  span{
+    float: none;
+    width: 100%;
+}
+.Trade-Top-div .Trade-content-div p:nth-child(10) {
+    clear: both;
+}
+.Trade-Top-div .Trade-content-div p:nth-child(10) span {
+    float: none;
+    width: 100%;
+}
+.ST-BOX {
+    height: 14rem;
+}
+#ST-Trade .Trade-bottom-button{
+    height:5.2rem;
+}
+.ST-bottom {
+    height: 4.5rem;
+}
+.ST-Amount ul li{
+float: left;
+    height: 18px;
+    width: 33.3%;
+    text-align: center;
+    color: #f2f2f2;
+    line-height: 18px;
+    overflow: hidden;
+    font-size: 13px;
+}
+.ST-Amount ul:first-child li{
+    color:#708CA9;
+}
+.Trade-Top-div .Trade-bottom-button button {
+    width:50%;
+    color:#009E0F;
+    padding-right:0px;
+}
+.Trade-Top-div .Trade-bottom-button button:last-child{
+    color:#FF3333;
+}
+
+/*CFD-Trade*/
+#CFD-Trade {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: #fff;
+    display:none;
+    z-index: 11111;
+} 
+.CFD-Trade-content {
+    margin-top: 7.5rem;
+}
+.CFD-BOX {
+    height: 12.8rem;
+}
+.Trade-content-div .Detail-content-top p:nth-child(11) select:first-child {
+    width: 50%;
+}
+/*Limited-Order*/
+#CFD-Limited-Order {
+    display:none;
+}
+#CFD-Limited-Order input{
+    width: 49%;
+}
+#CFD-Limited-Order select{
+    width: 49%;
+}
+#CFD-Limited-Order p:first-child span:last-child{
+    float: right;
+    width: 50%;
+}
+#CFD-Limited-Order p:nth-last-of-type(4) span:last-child{
+    float: right;
+    width: 50%;
+}
+#CFD-Limited-Order p:last-child input{
+    width: 100%;
+}
+/*IF-Done-Order*/
+#IF-Done-Order {
+    display: none;
+}
+
+#IF-Done-Order input {
+    width: 49%;
+}
+
+#IF-Done-Order select {
+    width: 49%;
+}
+
+#IF-Done-Order .SpanRight span:last-child{
+    float: right;
+    width: 50%;
+}
+
+/*#IF-Done-Order p:nth-last-of-type(4) span:last-child {
+    float: right;
+    width: 50%;
+}*/
+
+#IF-Done-Order p:last-child input {
+    width: 100%;
+}
+/*Stop-Limited-Order*/
+#CFD-Stop-Limited-Order {
+    display:none;
+}
+#CFD-Stop-Limited-Order input{
+    width: 49%;
+}
+#CFD-Stop-Limited-Order select{
+    width: 49%;
+}
+#CFD-Stop-Limited-Order p:first-child span:last-child{
+    float: right;
+    width: 50%;
+}
+#CFD-Stop-Limited-Order p:nth-child(3) span:last-child{
+    float: right;
+    width: 50%;
+}
+#CFD-Stop-Limited-Order p:nth-last-of-type(4) span:last-child{
+    float: right;
+    width: 50%;
+}
+
+#CFD-Stop-Limited-Order p:last-child input{
+    width: 100%;
+}
+/*Trailling-Stop-Order*/
+#CFD-Trailling-Stop-Order {
+    display:none;
+}
+#CFD-Trailling-Stop-Order input{
+    width: 49%;
+}
+#CFD-Trailling-Stop-Order select{
+    width: 49%;
+}
+#CFD-Trailling-Stop-Order p:first-child span:last-child{
+    float: right;
+    width: 50%;
+}
+#CFD-Trailling-Stop-Order p:nth-child(4) span:last-child{
+    float: right;
+    width: 50%;
+}
+#CFD-Trailling-Stop-Order p:nth-last-of-type(4) span:last-child{
+    float: right;
+    width: 50%;
+}
+
+#CFD-Trailling-Stop-Order p:last-child input{
+    width: 100%;
+}
+/*OCO-Order*/
+#CFD-OCO-Order {
+    display:none;
+}
+#CFD-OCO-Order input{
+    width: 49%;
+}
+#CFD-OCO-Order select{
+    width: 49%;
+}
+#CFD-OCO-Order hr {
+    border-color: #fff;
+    margin-top: 8px;
+}
+#CFD-OCO-Order h6 {
+    text-align: center;
+    font-weight: 100;
+    line-height: 12px;
+    padding-top: 4px;
+}
+#CFD-OCO-Order p:nth-child(3) {
+    padding: 0;
+}
+#CFD-OCO-Order p:nth-child(3) span:last-child{
+    float: right;
+    width: 50%;
+}
+#CFD-OCO-Order p:nth-last-of-type(8) {
+    padding: 0;
+}
+#CFD-OCO-Order p:nth-last-of-type(10) span:last-child{
+    float: right;
+    width: 50%;
+}
+#CFD-OCO-Order p:nth-last-of-type(8) span:last-child{
+    float: right;
+    width: 50%;
+}
+#CFD-OCO-Order p:nth-last-of-type(4) span:last-child{
+    float: right;
+    width: 50%;
+}
+#CFD-OCO-Order p:last-child input{
+    width: 100%;
+}
+/*Contingency Order*/
+#CFD-Contingency-Order {
+    display:none;
+}
+#CFD-Contingency-Order input{
+    width: 49%;
+}
+#CFD-Contingency-Order select{
+    width: 49%;
+}
+#CFD-Contingency-Order p:first-child span:last-child{
+    float: right;
+    width: 50%;
+}
+#CFD-Contingency-Order p:nth-child(3) span:last-child{
+    float: right;
+    width: 50%;
+}
+#CFD-Contingency-Order p:nth-last-of-type(4) span:last-child{
+    float: right;
+    width: 50%;
+}
+#CFD-Contingency-Order p:last-child input{
+    width: 100%;
+}
+#CFD-Trade .CFD-Amount li{
+    float: left;
+    width: 50%;
+    text-align: center;
+    overflow: hidden;
+    color: #f2f2f2;
+    line-height: 18px;
+    height: 18px;
+    font-size: 13px;
+}
+#CFD-Trade .CFD-Amount ul:first-child li{
+    color:#6482A2;
+}
+#CFD-Trade .CFD-Amount ul:last-child li{
+    float:left;
+    width:50%;
+    text-align:center;
+}
+#CFD-Trade .Trade-bottom-button {
+    height: 4.5rem;
+}
+#CFD-Trade .Trade-bottom-button button {
+    line-height: 2.4rem;
+}
+.ContractSearch input {
+    width: 70%;
+    height: 38px;
+    outline: 0;
+    border: 1px solid #959595;
+    border-radius: 2px;
+    text-indent: .4rem;
+    color: #959595;
+}
+
+#Trade-content .clear {
+    display: none;
+    position: absolute;
+    top: 36%;
+    right: 30%;
+    border-radius: 10px;
+    background: orange;
+    width: 20px;
+    color: #f2f2f2;
+    height: 20px;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    text-indent: 0;
+}
+
+.ContractSearch select {
+    width: 25%;
+    height: 38px;
+    outline: 0;
+    border: 1px solid #959595;
+    border-radius: 2px;
+    text-indent: 0.4rem;
+    background: #f2f2f2;
+    color: #959595;
+}
+#CFDTrade {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: #fff;
+    z-index: 111111;
+    display: none;
+}
+
+#CFDTrade-Trade-content {
+    width: 100%;
+    height: 100%;
+}
+
+#CFD-Trade-Search {
+    width: 76%;
+    float: right;
+    margin-right: 1rem;
+}
+
+#CFDTrade .ContractSearch span:first-child {
+    display: block;
+    width: 14%;
+    height: 38px;
+    margin-left: 0.5rem;
+    float: left;
+    background-size: 84%;
+}
+
+#CFDTrade .ContractSearch {
+    top: 0px;
+    height: 40px;
+}
+
+#CFD-Search-list {
+    width: 100%;
+    position: fixed;
+    background: #f2f2f2;
+    top: 62px;
+    height: 100%;
+    overflow: scroll;
+}
+
+#CFD-Search-list ul li {
+    width: 100%;
+    height: 44px;
+    overflow: hidden;
+    border-bottom: 1px solid #E2E2E2;
+}
+
+#CFD-Search-list ul li a {
+    display: block;
+    width: 34px;
+    height: 30px;
+    padding: 4px;
+    float: left;
+    margin: 4px;
+    font-size: 14px;
+    background: #8d8d02;
+    color: #f2f2f2;
+    text-indent: 0;
+    text-align: center;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+#CFD-Search-list ul li div {
+    float: right;
+    width: 83%;
+    height: 22px;
+    text-indent: 0;
+    line-height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#CFD-Search-list ul li div:last-child {
+    font-size: 12px;
+}
+
+#CFDTrade .clear {
+    display: none;
+    position: absolute;
+    top: 30%;
+    right: 6%;
+    border-radius: 10px;
+    background: orange;
+    width: 20px;
+    color: #f2f2f2;
+    height: 20px;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    text-indent: 0;
+}
+
+
+/*CFD-Trade*/
+#FTFXFXMN-Trade {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: #fff;
+    display:none;
+    z-index: 11111;
+} 
+.FTFXFXMN-Trade-content {
+    margin-top: 7.5rem;
+}
+.FTFXFXMN-BOX {
+    height: 15.2rem;
+}
+#FTFXFXMN-Trade .FTFXFXMN-Amount li {
+    float: left;
+    width: 33%;
+    text-align: center;
+    overflow: hidden;
+    color: #f2f2f2;
+    line-height: 18px;
+    font-size: 13px;
+    height: 18px;
+}
+
+#FTFXFXMN-Trade .FTFXFXMN-Amount ul:first-child li {
+    color: #6482A2;
+}
+
+#FTFXFXMN-Trade .FTFXFXMN-Amount ul:last-child li {
+    float: left;
+    width: 33%;
+    text-align: center;
+}
+#FTFXFXMN-Trade .Trade-bottom-button {
+    height: 4.5rem;
+}
+#FTFXFXMN-Trade .Trade-bottom-button button {
+    line-height: 2.4rem;
+}
+/*FTFXFXMN-Limited-Order*/
+#FTFXFXMN-Limited-Order p input:last-child{
+    float: right;
+    width: 50%;
+}
+#FTFXFXMN-Limited-Order p:first-child {
+    text-align:center;
+}
+#FTFXFXMN-Limited-Order p:first-child span:last-child{
+    width: 100%;
+}
+#FTFXFXMN-Limited-Order p:first-child + p input{
+    float: none;
+    width: 100%;
+}
+#FTFXFXMN-Limited-Order p:nth-child(3) {
+    text-align:center;
+}
+#FTFXFXMN-Limited-Order p:nth-child(3) span:last-child{
+    width: 100%;
+}
+#FTFXFXMN-Limited-Order p:nth-child(4) input{
+    float: none;
+    width: 100%;
+}
+#FTFXFXMN-Limited-Order p:nth-child(5) span:last-child{
+    float: right;
+    width: 50%;
+}
+#FTFXFXMN-Limited-Order p input{
+    width: 49%;
+}
+#FTFXFXMN-Limited-Order p:nth-last-of-type(4) span:last-child {
+    float: none;
+    width: 49%;
+}
+#FTFXFXMN-Limited-Order p:nth-last-of-type(3) select {
+    width: 49%;
+}
+#FTFXFXMN-Limited-Order p:last-child input {
+    width: 100%;
+}
+.stopLimitPrice {
+    display:none;
+}
+.ocoPrice {
+    display:none;
+}
+#UT-Trade {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display:none;
+    background: #fff;
+    z-index: 11111;
+}
+.UT-Trade-content p{
+	padding: 0.45rem;
+}
+
+.UT-Trade-content select{
+    width: 50%;
+    height: 38px;
+    font-size:14px;
+}
+.UT-Trade-content input{
+    width: 100%;
+    height: 38px;
+    font-size:14px;
+    text-indent:0.4rem;
+}
+.UT-Trade-content span {
+	color: #6D6D6D;
+	font-size: 13px;
+}
+.UT-Trade-content .UT_trading_manner {
+	height: 2.5rem;
+	margin-top: 0.5rem;
+}
+.UT-Trade-content .UT_trading_manner li{
+	float: left;
+    width: 33%;
+    height: 100%;
+    text-align: center;
+    line-height: 2.5rem;
+	color:#f2f2f2;
+	background:#ccc;
+	margin-left:1px;
+}
+.UT_trading_manner li:first-child {
+	background: #009900;
+}
+#UT_Trade_content_Buy {
+	clear:both;
+}
+/*UT_Trade_content_Buy*/
+#UT_Trade_content_Buy p:nth-child(3) span:last-child {
+	float: right;
+}
+#UT_Trade_content_Buy p:nth-child(4) span:last-child {
+	float: right;
+}
+#UT_Trade_content_Buy p:nth-child(5) span:last-child {
+	float: right;
+}
+#UT_Trade_content_Buy p:nth-last-of-type(4) span:last-child {
+	float: right;
+	width: 48%;
+}
+#UT_Trade_content_Buy p:nth-last-of-type(3) select:last-child {
+	float: right;
+	width: 48%;
+}
+
+/*UT_Trade_content_Sell*/
+#UT_Trade_content_Sell p:nth-last-of-type(4) span:last-child {
+	float: right;
+	width: 48%;
+}
+#UT_Trade_content_Sell p:nth-last-of-type(3) select:last-child {
+	float: right;
+	width: 48%;
+}
+.OrderStatus-Detail-content .The_Reference {
+	padding: 0.45rem;
+}
+.OrderStatus-Detail-content .The_Reference select{
+	width:100%;
+	padding: 0 20px;
+}
+/*UT_Trade_content_Switch*/
+#UT_Trade_content_Switch .Switch_title_div {
+	padding: 0.45rem;
+	height: 50px;
+}
+
+#UT_Trade_content_Switch .Switch_title_div .Switch_title div {
+	color: #333;
+}
+
+#UT_Trade_content_Switch p:first-child {
+	text-align: center;
+	padding: 0.45rem 0.45rem 0 0.45rem;
+	border-bottom: 1px solid #ccc;
+}
+
+#UT_Trade_content_Switch p:first-child::before {
+}
+
+#UT_Trade_content_Switch .The_Reference + p span:last-child {
+	float: right;
+	width: 50%;
+}
+
+#UT_Trade_content_Switch .select-select select:first-child {
+	width: 49%;
+}
+
+#UT_Trade_content_Switch .select-select select:last-child {
+	width: 49%;
+}
+
+#UT_Trade_content_Switch .Search > div {
+	padding: 0.45rem;
+	height: 50px;
+}
+
+#UT_Trade_content_Switch .Search .Switch_title div {
+	color: #333;
+}
+
+#UT_Trade_content_Switch p:nth-last-child(5) {
+	text-align: center;
+	padding: 0 0.45rem 0 0.45rem;
+	border-bottom: 1px solid #ccc;
+}
+
+.Trade-bottom-button .UT-Amount li{
+    width: 100%;
+    line-height: 22px;
+    color:#708CA9;
+    text-align: center;
+}
+.Trade-bottom-button .UT-Amount li:last-child{
+    color: #f2f2f2;
+}
+#UT-Trade .Trade-bottom-button{
+    height: 6rem;
+}
+#UT-Trade .Trade-bottom-button button{
+    width: 32.5%;
+    color:#009900;
+    float:none;
+    padding:0;
+}
+#UT-Trade .Trade-bottom-button button[disabled='disabled'] {
+    color:#ccc;
+}
+#UT-Trade-title-bottom ul li:last-child {
+    text-align: right;
+}
+#UT-Trade .UT_Trade_submit {
+	margin: 0 0.45rem;
+	height: 3rem;
+	line-height: 3rem;
+	text-align: center;
+	border-radius: 4px;
+	background: #009900;
+	color: #f2f2f2;
+	font-size: 1.2rem;
+}
+
+
+#UT-Trade .FonetSize_Info {
+	width: 96%;
+	height: auto;
+	padding: 0 2%;
+	word-break: break-all;
+	color: #eb0303;
+}
+
+#UT-Trade .PDF_Info {
+	width: 96%;
+	height: auto;
+	padding: 0 2%;
+	word-break: break-all;
+	padding-top: 6px;
+}
+
+#UT-Trade .PDF_Info div {
+	width: 24%;
+	float: left;
+}
+
+#UT-Trade .PDF_Info div a {
+	width: 27px;
+	height: 30px;
+	display: block;
+	margin: 0 auto;
+	background: url(../../public/img/PDF.png);
+	background-size: 100% 100%;
+}
+
+#UT-Trade .PDF_Info div ul {
+	padding: 0;
+}
+
+#UT-Trade .PDF_Info div li {
+	text-align: center;
+	font-size: 12px;
+}
+
+
+
+.UT-BOX {
+	height: 14rem;
+	clear: both
+}
+
+
+/*UT_Trade_INfo*/
+#trade_UT_INfo {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	display: none;
+	background: #fff;
+	z-index: 11111;
+}
+
+#UT_trade_Info .padding_content {
+	padding: 0px 10px;
+}
+
+.UT_trade_Info_top {
+	width: 100%;
+	height: 2.4rem;
+	line-height: 2.4rem;
+	position: relative;
+	overflow-x: scroll;
+	box-shadow: inset 0px 4px 8px 0px;
+	position: absolute;
+	background: #0C3365;
+	z-index: 1;
+}
+.UT_trade_Info_top > div {
+    width: 448px;
+    padding: 0 10px 0 10px;
+    height: 2.4rem;
+}
+.UT_trade_Info_top a {
+    padding: 0 14px;
+	color: #F2F2E8;
+    float: left;
+    line-height: 36px;
+    display: block;
+}
+.UT_trade_Info .tabs .tab > div {
+	padding: 0 0.6rem;
+}
+
+.General_Info_content .Low_High {
+	height: 46px;
+	border-bottom: 1px solid #ccc;
+}
+.Low_High li {
+	width:50%;
+	float:left;
+}
+.Low_High li:last-child{
+    width: 49%;
+    text-align: right;
+    float: right;
+}
+#General_Info .before {
+	margin-top: .5rem;
+}
+.General_Info_content .before {
+	padding: 4px 0;
+	position: relative;
+	font-size: 18px;
+	font-weight: bolder;
+}
+.General_Info_content .before span {
+	content: " ";
+	position: absolute;
+	right: 5%;
+	border-top: 12px solid #ccc;
+	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+}
+#General_Info ol ol li {
+	width: 50%;
+	float: left;
+}
+#General_Info ol ol li:last-child {
+	width: 49%;
+	text-align: right;
+	float: right;
+}
+#General_Infos .accordion-item-content ol ol:last-child::before {
+	content: " ";
+	border-bottom: 1px solid #ccc;
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
+}
+#General_Infos .accordion-item-content ol li {
+	margin-bottom: .4rem;
+}
+#Investment_Objective .accordion-item-content p {
+	font-size: 12px;
+}
+#UT_trade_Info .scroll_Left {
+	float: left;
+	width: 164px;
+	height: auto;
+}
+#UT_trade_Info .scroll_Left ul{
+	padding: 0;
+}
+#UT_trade_Info .scroll_Left li{
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-top: 0;
+}
+
+#UT_trade_Info .scroll_Content {
+	float: right;
+	width: 45%;
+	height: auto;
+	overflow-x: scroll;
+}
+#UT_trade_Info .scroll_Content ul {
+    width: 388px;
+    height: 48px;
+	padding: 0;
+}
+
+#UT_trade_Info .scroll_Content li {
+	float: left;
+    width: 96px;
+    height: 100%;
+    line-height: 48px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-top: 0;
+    border-left: 0;
+}
+#UT_trade_Info .scroll_Left ul li:first-child {
+	background: #0C3365;
+	color: #f2f2f2;
+}
+#UT_trade_Info .scroll_Content ul:first-child li {
+	background: #0C3365;
+	border: 0;
+	width: 97px;
+	color: #f2f2f2;
+	border-bottom: 1px solid #ccc;
+}
+#Fund_Awards .accordion-item-content div:nth-child(3) {
+	width:100%;
+	height:30px;
+	clear: both;
+}
+
+#Performance_chart {
+	width: 100%;
+	height: 200px;
+}
+#Performance_chart1 {
+	width: 100%;
+	height: 200px;
+}
+.Performance_content_table {
+	margin: 20px 0;
+}
+.Performance_content_table table {
+	border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+}
+.Performance_content_table table tr{
+	border: 1px solid #ccc;
+	height: 32px;
+}
+.Performance_content_table table td{
+	border: 1px solid #ccc;
+	width: 32%;
+}
+.Performance_content_table table tr:first-child{
+	height: 54px;
+}
+.Performance_content_table button {
+	width: 100%;
+	height: 54px;
+	border: 0;
+	outline: 0;
+	word-break: break-all;
+}
+.Performance_content_table button span{
+	display: block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin: auto;
+    background: #F48D1F;
+}
+#Performance_table table tr:first-child .table_Top_name {
+	width: 36%;
+	font-size: 12px;
+	font-weight: bolder;
+}
+#Performance_table table tr:first-child .table_Top_name span{
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin: auto;
+    background: #164589;
+}
+#Performance_table1 table tr:first-child .table_Top_name {
+	width: 36%;
+	font-size: 12px;
+	font-weight: bolder;
+}
+#Performance_table1 table tr:first-child .table_Top_name span{
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin: auto;
+    background: #164589;
+}
+.Documents_content .Documents_content_chunk {
+	height: 50px;
+	padding: .2rem .4rem;
+	border-bottom: 1px solid #ccc;
+}
+.Documents_content .Documents_content_chunk a{
+	float: left;
+    width: 27px;
+    height: 30px;
+    margin: 0.4rem .6rem 0 .6rem;
+	background: url(../../public/img/PDF.png);
+    background-size: 100% 100%;
+}
+.Documents_content .Documents_content_chunk p:last-child{
+	color: #ccc;
+}
+.Fund_Manager_Info_content p a {
+	color:#033c7b;
+}
+#UT_trade_Info .Info_button div {
+	background: #F48D1F;
+	height: 2.6rem;
+	border-radius: 6px;
+	width: 96%;
+	line-height: 2.6rem;
+	float: right;
+	color: #f2f2f2;
+	text-align: center;
+	margin: 2% 2%;
+}
+#Regular_Savings_Plan .Regular_Savings_Plan_content p {
+	padding-top: 42%;
+}
+#Regular_Savings_Plan .Regular_Savings_Plan_content p span{
+	text-decoration:underline;
+}
+#UTTrade {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	background: #fff;
+	z-index: 11111111;
+	display: none;
+}
+#UTTrade-Trade-content {
+    width: 100%;
+    height: 100%;
+}
+#UT-Trade-Search {
+    width: 76%;
+    float: right;
+    margin-right: 1rem;
+}
+#UTTrade .ContractSearch span:first-child {
+    display: block;
+    width: 14%;
+    height: 38px;
+    margin-left: 0.5rem;
+    float: left;
+    background-size: 84%;
+}
+#UTTrade .ContractSearch {
+    top: 0px;
+    height: 40px;
+}
+#UT-Search-list {
+    width: 100%;
+    position: fixed;
+    background: #f2f2f2;
+    top: 62px;
+    height: 100%;
+    overflow: scroll;
+}
+#UT-Search-list ul li {
+    width: 100%;
+    height: 44px;
+    overflow: hidden;
+    border-bottom: 1px solid #E2E2E2;
+}
+#UT-Search-list ul li a {
+    display: block;
+    width: 34px;
+    height: 30px;
+    padding: 4px;
+    float: left;
+    margin: 4px;
+    font-size: 14px;
+    background: #8d8d02;
+    color: #f2f2f2;
+    text-indent: 0;
+    text-align: center;
+    overflow: hidden;
+    word-break: break-word;
+}
+#UT-Search-list ul li div {
+    float: right;
+    width: 83%;
+    height: 22px;
+    text-indent: 0;
+    line-height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#UT-Search-list ul li div:last-child {
+    font-size: 12px;
+}
+#UTTrade .clear {
+    display: none;
+    position: absolute;
+    top: 30%;
+    right: 6%;
+    border-radius: 10px;
+    background: orange;
+    width: 20px;
+    color: #f2f2f2;
+    height: 20px;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    text-indent: 0;
+}
+
+
+
+
+a[class="tab-link active"] {
+	color: #E29149;
+	border-bottom: 2px solid #E29149;
+}
+
+/*LanguageSwitch*/
+#LanguageSwitch {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 5%;
+	width: 100%;
+	font-size: 18px;
+	color: #333;
+	font-weight: 500;
+}
+
+.LanguageSwitch-left {
+    float: left;
+    margin-right: 0.5rem;
+}
+
+.LanguageSwitch-right {
+    width: 262px;
+}
+
+    .LanguageSwitch-right input {
+        vertical-align: middle;
+    }
